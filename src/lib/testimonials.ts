@@ -2,12 +2,14 @@
 export type Exam = 'JEE' | 'NEET' | 'Foundation' | 'Olympiads';
 export type Subject = 'Physics' | 'Chemistry' | 'Mathematics' | 'Biology' | 'General';
 export type MediaKind = 'video' | 'image' | 'text';
+export type JeeTier = 'mains' | 'advanced';
 
 export type Testimonial = {
   id: string;
   name: string;
   short: string;                 // "AIR 16" | "JEE Main 99.87%ile"
   exam: Exam;
+  jeeTier?: JeeTier;             // lets us split JEE Main vs Advanced
   subject: Subject;
   year: number;
   kind: MediaKind;
@@ -48,52 +50,37 @@ export const yearsFrom = (rows: Testimonial[]) =>
 
 /** Replace this with your DB/API later */
 export async function getTestimonials(): Promise<Testimonial[]> {
-  // mock data (fits your existing design)
+  // TODO: Add your testimonials here
+  // Example format:
+  /*
   return [
     {
       id: 't1',
-      name: 'Venkatesh Gupta',
-      short: 'ISI AIR 17',
-      exam: 'Olympiads',
-      subject: 'Mathematics',
+      name: 'Student Name',
+      short: 'JEE Main 99.87%ile',
+      exam: 'JEE',
+      jeeTier: 'mains',
+      subject: 'Physics',
       year: 2024,
       kind: 'text',
-      text: 'The structured guidance and exam-like practice helped improve speed and accuracy dramatically.',
+      text: 'Great coaching experience...',
       stars: 5,
     },
     {
       id: 't2',
-      name: 'Anshul',
-      short: 'JEE Topper',
+      name: 'Another Student',
+      short: 'JEE Advanced AIR 22',
       exam: 'JEE',
-      subject: 'Physics',
-      year: 2024,
-      kind: 'text',
-      text: 'Concept clarity with practice analytics made revisions targeted and effective.',
-      stars: 5,
-    },
-    {
-      id: 't3',
-      name: 'Ishita Sharma',
-      short: 'NEET 690/720',
-      exam: 'NEET',
-      subject: 'Biology',
-      year: 2023,
-      kind: 'video',
-      video: { type: 'embed', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', poster: '' },
-      stars: 5,
-    },
-    {
-      id: 't4',
-      name: 'Raghav Jain',
-      short: 'JEE Main 99.87%ile',
-      exam: 'JEE',
+      jeeTier: 'advanced',
       subject: 'Mathematics',
       year: 2023,
       kind: 'image',
-      image: { url: '/images/results/raghav-99-87.jpg', alt: 'Raghav JEE Main 99.87 percentile' },
+      image: { url: 'https://drive.google.com/file/d/YOUR_IMAGE_ID/view', alt: 'Result' },
       stars: 5,
     },
   ];
+  */
+  
+  return [];
 }
 

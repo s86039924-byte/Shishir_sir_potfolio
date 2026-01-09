@@ -128,15 +128,15 @@ export default function TestimonialCard({
        )}
        {media}
        <div className="t-body">
-         <div className="t-quoteMark">“</div>
-         <h3 className="t-name">{t.name}</h3>
-         {/* Meta line now includes Program if present */}
-         <p className="t-meta">
-           {[t.exam, t.subject, t.year, t.program].filter(Boolean).join(' • ')}
-         </p>
-          {/* Keep textual rank beneath too, if present */}
-          {badgeText && <p className="t-rank-inline">{badgeText}</p>}
-         {t.text && <p className="t-text">{t.text}</p>}
+         <div className="t-content">
+           <h3 className="t-name">{t.name}</h3>
+           <p className="t-short">{t.short}</p>
+           <p className="t-meta">
+             {[t.exam, t.subject, t.year, t.program].filter(Boolean).join(' • ')}
+           </p>
+           {badgeText && <p className="t-rank-inline">{badgeText}</p>}
+           {t.text && <p className="t-text">{t.text}</p>}
+         </div>
        </div>
      </article>
    );

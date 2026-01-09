@@ -32,6 +32,7 @@ export default function Navigation() {
     { label: 'Courses', href: '/courses' },
     { label: 'Testimonials', href: '/testimonials' },
     { label: 'Gallery', href: '/#gallery' },
+    { label: 'Dost', href: '/Dost' },
     { label: 'Upcoming Admission Test', href: '/admission-test' },
     { label: 'Contact', href: '/#contact' },
   ]
@@ -75,6 +76,9 @@ export default function Navigation() {
         <div className="nav-actions">
           <Link className="nav-cta" href="/admission-test">
             Upcoming Admission Test
+          </Link>
+          <Link className="mobile-dost-btn" href="/Dost">
+            Dost
           </Link>
           <button
             className={`mobile-toggle ${isMobileMenuOpen ? 'open' : ''}`}

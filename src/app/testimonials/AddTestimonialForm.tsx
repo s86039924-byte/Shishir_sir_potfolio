@@ -121,6 +121,22 @@ export default function AddTestimonialForm({
     if (kind === 'text') {
       if (!text.trim()) return alert('Write the testimonial text');
       base.text = text.trim();
+      
+      // Optional: add image to text testimonial
+      if (imageUrl) {
+        const raw = imageUrl.trim();
+        const c = classifyUrl(raw);
+        let finalUrl = raw;
+        if (c.kind === 'drive' && c.id) {
+          finalUrl = driveImageUrl(c.id);
+        }
+        base.image = { url: finalUrl, provider: c.kind || 'direct', alt: `${name} ${short}` };
+      } else if (imageFile) {
+        await dbPut('images', id, imageFile, imageFile.type);
+        const dataUrl = imagePreview || await localStore.fileToDataUrl(imageFile);
+        localStore.saveImageData(id, dataUrl);
+        base.image = { id, dataUrl, blobId: id, alt: `${name} ${short}` };
+      }
     }
 
     const all = localStore.loadAll();
@@ -233,10 +249,25 @@ export default function AddTestimonialForm({
       )}
 
       {kind === 'text' && (
-        <div className="col-12">
-          <label>Text</label>
-          <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Student feedback..." />
-        </div>
+        <>
+          <div className="col-12">
+            <label>Text</label>
+            <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Student feedback..." />
+          </div>
+          <div className="col-12">
+            <label>Image URL (optional - Google Drive or direct link)</label>
+            <input
+              type="url"
+              value={imageUrl}
+              onChange={e => setImageUrl(e.target.value.trim())}
+              placeholder="https://drive.google.com/file/d/ID/view or https://…/image.jpg"
+            />
+          </div>
+          <div className="col-12">
+            <label>Upload Image (optional)</label>
+            <input type="file" accept="image/*" onChange={e => setImageFile(e.target.files?.[0] || null)} />
+          </div>
+        </>
       )}
 
       <div className="atm-actions">

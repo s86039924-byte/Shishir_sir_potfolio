@@ -9,16 +9,11 @@ import AddTestimonialModal from './AddTestimonialModal';
 import TestimonialCard from './TestimonialCard';
 
 export default function TestimonialsPage() {
-  const [q, setQ] = useState('');
-  const [open, setOpen] = useState(false);
   const [base, setBase] = useState<Testimonial[]>([]);
   const [stored, setStored] = useState<Testimonial[]>([]);
   const [hydrated, setHydrated] = useState(false);
-  const [selectMode, setSelectMode] = useState(false);
-  const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [hiddenIds, setHiddenIds] = useState<string[]>([]);
+  const [open, setOpen] = useState(false);
 
-  // load mock/base testimonials (async) once on client
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -32,84 +27,19 @@ export default function TestimonialsPage() {
     return () => { alive = false; };
   }, []);
 
-  // read localStorage/IDB only AFTER hydration
   useEffect(() => {
     setStored(localStore.loadAll());
-    setHiddenIds(localStore.loadHidden());
     setHydrated(true);
   }, []);
-
-  // simple, robust filter
-  const hiddenSet = useMemo(() => new Set(hiddenIds), [hiddenIds]);
-
-  const items = useMemo(() => {
-    const merged = [...stored, ...base].filter(t => !hiddenSet.has(t.id));
-    const term = q.trim().toLowerCase();
-    if (!term) return merged;
-    return merged.filter(t => {
-      const bag = [
-        t.name,
-        t.short,
-        t.exam,
-        t.subject,
-        t.program,
-        String(t.year ?? ''),
-        String(t.rank ?? ''),
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
-      return bag.includes(term);
-    });
-  }, [q, base, stored, hiddenSet]);
 
   const onAdded = () => {
     setStored(localStore.loadAll());
   };
 
-  const storedIdSet = useMemo(() => new Set(stored.map(t => t.id)), [stored]);
-
-  useEffect(() => {
-    setSelectedIds(ids => ids.filter(id => storedIdSet.has(id)));
-  }, [storedIdSet]);
-
-  const toggleSelect = (id: string) => {
-    setSelectedIds(prev => (prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]));
-  };
-
-  const cancelSelectMode = () => {
-    setSelectMode(false);
-    setSelectedIds([]);
-  };
-
-  const confirmDelete = async () => {
-    if (!selectedIds.length) return;
-    if (!window.confirm(`Delete ${selectedIds.length} testimonial${selectedIds.length > 1 ? 's' : ''}?`)) return;
-    const storedRecords = stored.filter(t => selectedIds.includes(t.id));
-    const storedIdsToRemove = storedRecords.map(t => t.id);
-    const baseIdsToHide = selectedIds.filter(id => !storedIdsToRemove.includes(id));
-
-    if (storedRecords.length) {
-      const remaining = await localStore.removeTestimonials(storedRecords);
-      setStored(remaining);
-    }
-
-    if (baseIdsToHide.length) {
-      const nextHidden = Array.from(new Set([...hiddenIds, ...baseIdsToHide]));
-      localStore.saveHidden(nextHidden);
-      setHiddenIds(nextHidden);
-    }
-
-    cancelSelectMode();
-  };
-
   const categorizeJeeResult = (t: Testimonial): 'mains' | 'advanced' => {
     if (t.jeeTier) return t.jeeTier;
     if (t.exam !== 'JEE') return 'mains';
-    const blob = [t.short, t.program, t.text]
-      .filter(Boolean)
-      .join(' ')
-      .toLowerCase();
+    const blob = [t.short, t.program, t.text].filter(Boolean).join(' ').toLowerCase();
     if (blob.includes('advanced') || blob.includes('adv.')) return 'advanced';
     if (blob.includes('main') || blob.includes('mains')) return 'mains';
     return 'mains';
@@ -131,130 +61,60 @@ export default function TestimonialsPage() {
 
   const jeeBuckets = useMemo(() => {
     if (!hydrated) {
-      return {
-        mains: { videos: [], images: [], texts: [] },
-        advanced: { videos: [], images: [], texts: [] },
-      };
+      return { mains: { videos: [], images: [], texts: [] }, advanced: { videos: [], images: [], texts: [] } };
     }
-
     const mainsItems: Testimonial[] = [];
     const advancedItems: Testimonial[] = [];
-
-    items.forEach((t) => {
+    const merged = [...stored, ...base];
+    merged.forEach((t) => {
       const bucket = categorizeJeeResult(t) === 'advanced' ? advancedItems : mainsItems;
       bucket.push(t);
     });
+    return { mains: buildMediaBuckets(mainsItems), advanced: buildMediaBuckets(advancedItems) };
+  }, [stored, base, hydrated]);
 
-    return {
-      mains: buildMediaBuckets(mainsItems),
-      advanced: buildMediaBuckets(advancedItems),
-    };
-  }, [items, hydrated]);
-
-  const renderMediaSections = (label: string, data: ReturnType<typeof buildMediaBuckets>) => {
-    const { videos, images, texts } = data;
-    const empty = videos.length === 0 && images.length === 0 && texts.length === 0;
-
+  const renderSection = (title: string, media: ReturnType<typeof buildMediaBuckets>) => {
+    const { videos, images, texts } = media;
+    const hasContent = videos.length > 0 || images.length > 0 || texts.length > 0;
+    if (!hasContent) return null;
     return (
-      <section className="t-result-block">
-        <div className="t-result-header">
-          <h3 className="t-result-title">{label}</h3>
-          {empty && <p className="t-empty">No records yet.</p>}
+      <div key={title} className="testi-section">
+        <div className="testi-section__header">
+          <h2 className="testi-section__title">{title}</h2>
+          <span className="testi-section__badge">Students</span>
         </div>
-
         {videos.length > 0 && (
-          <section className="t-sect">
-            <h4 className="t-row-title">Videos</h4>
-            <div className="t-row-grid t-row-grid--4">
-              {videos.map((t) => (
-                <TestimonialCard
-                  key={t.id}
-                  t={t}
-                  selectable={selectMode}
-                  selected={selectedIds.includes(t.id)}
-                  onToggleSelect={toggleSelect}
-                />
-              ))}
-            </div>
-          </section>
+          <div className="testi-grid testi-grid--video">
+            {videos.map((t) => <TestimonialCard key={t.id} t={t} />)}
+          </div>
         )}
-
         {images.length > 0 && (
-          <section className="t-sect">
-            <h4 className="t-row-title">Images</h4>
-            <div className="t-row-grid t-row-grid--4">
-              {images.map((t) => (
-                <TestimonialCard
-                  key={t.id}
-                  t={t}
-                  selectable={selectMode}
-                  selected={selectedIds.includes(t.id)}
-                  onToggleSelect={toggleSelect}
-                />
-              ))}
-            </div>
-          </section>
+          <div className="testi-grid testi-grid--image">
+            {images.map((t) => <TestimonialCard key={t.id} t={t} />)}
+          </div>
         )}
-
         {texts.length > 0 && (
-          <section className="t-sect">
-            <h4 className="t-row-title">Text</h4>
-            <div className="t-row-grid t-row-grid--4">
-              {texts.map((t) => (
-                <TestimonialCard
-                  key={t.id}
-                  t={t}
-                  selectable={selectMode}
-                  selected={selectedIds.includes(t.id)}
-                  onToggleSelect={toggleSelect}
-                />
-              ))}
-            </div>
-          </section>
+          <div className="testi-grid testi-grid--text">
+            {texts.map((t) => <TestimonialCard key={t.id} t={t} />)}
+          </div>
         )}
-      </section>
+      </div>
     );
   };
 
   return (
-    <section className="t-wrap">
-      <header className="t-header">
-        <h2 className="t-title">Student Testimonials</h2>
-        <p className="t-subtitle">Add image/video/text below — stored locally in “folders”.</p>
-        <div className="t-controls">
-          <input
-            className="t-input"
-            placeholder="Search by name, rank, exam, year..."
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-          <button className="t-button" onClick={() => setOpen(true)}>+ Add Testimonial</button>
-          {!selectMode && stored.length > 0 && (
-            <button className="t-button t-button--ghost" onClick={() => setSelectMode(true)}>
-              Delete Testimonials
-            </button>
-          )}
-          {selectMode && (
-            <>
-              <button
-                className="t-button"
-                onClick={confirmDelete}
-                disabled={!selectedIds.length}
-              >
-                Delete Selected ({selectedIds.length})
-              </button>
-              <button className="t-button t-button--ghost" onClick={cancelSelectMode}>
-                Cancel
-              </button>
-            </>
-          )}
+    <main className="testimonials-page">
+      <div className="container">
+        <div className="testi-page-header">
+          <h1 className="testi-page-title">Student Testimonials</h1>
+          <button className="testi-add-btn" onClick={() => setOpen(true)}>+ Add Testimonial</button>
         </div>
-      </header>
-
-      {renderMediaSections('JEE Mains Results', jeeBuckets.mains)}
-      {renderMediaSections('JEE Advanced Results', jeeBuckets.advanced)}
-
+        <div className="testi-sections">
+          {renderSection('JEE Main Results', jeeBuckets.mains)}
+          {renderSection('JEE Advanced Results', jeeBuckets.advanced)}
+        </div>
+      </div>
       {open && <AddTestimonialModal onCancel={() => setOpen(false)} onAdded={onAdded} />}
-    </section>
+    </main>
   );
 }

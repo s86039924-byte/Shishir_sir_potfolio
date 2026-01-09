@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer" id="cta">
       <div className="container footer-content">
-        <div className="footer-logo">Re-Wise</div>
+        <div className="footer-logo">IIT Study Forum</div>
         <p className="footer-tagline">Transforming Education Through Passion & Innovation</p>
 
         <div className="social-links">
@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Re-Wise. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} IIT Study Forum. All rights reserved.</p>
         </div>
       </div>
     </footer>
