@@ -1718,7 +1718,7 @@ section {
 }
 
 /* Dost button special aesthetic styling */
-[data-nav].site-nav nav a[href="/Dost"] {
+[data-nav].site-nav nav a[href="/dost"] {
   padding: 10px 20px;
   border-radius: 12px;
   background: linear-gradient(135deg, #6496ff, #4a7bff);
@@ -1733,7 +1733,7 @@ section {
   align-items: center;
 }
 
-[data-nav].site-nav nav a[href="/Dost"]::before {
+[data-nav].site-nav nav a[href="/dost"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1745,7 +1745,7 @@ section {
   pointer-events: none;
 }
 
-[data-nav].site-nav nav a[href="/Dost"]::after {
+[data-nav].site-nav nav a[href="/dost"]::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1779,13 +1779,13 @@ section {
   }
 }
 
-[data-nav].site-nav nav a[href="/Dost"]:hover {
+[data-nav].site-nav nav a[href="/dost"]:hover {
   background: linear-gradient(135deg, #5588ff, #3a6bff);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(100, 150, 255, 0.5);
 }
 
-[data-nav].site-nav nav a[href="/Dost"]:active {
+[data-nav].site-nav nav a[href="/dost"]:active {
   transform: translateY(-1px);
 }
 
@@ -1878,6 +1878,7 @@ section {
   box-shadow: 0 10px 30px rgba(100, 150, 255, 0.5);
 }
 
+
 [data-nav].site-nav .mobile-toggle {
   display: none;
   width: 42px;
@@ -1965,7 +1966,7 @@ section {
     display: none;
   }
   /* Show Dost button in mobile header */
-  [data-nav].site-nav nav a[href="/Dost"] {
+  [data-nav].site-nav nav a[href="/dost"] {
     display: inline-flex !important;
     padding: 10px 16px !important;
     border-radius: 12px !important;
@@ -1978,13 +1979,13 @@ section {
     box-shadow: 0 6px 20px rgba(100, 150, 255, 0.3);
     transition: all 0.3s ease;
   }
-  [data-nav].site-nav nav a[href="/Dost"]::before {
+  [data-nav].site-nav nav a[href="/dost"]::before {
     animation: dostShine 2s infinite;
   }
-  [data-nav].site-nav nav a[href="/Dost"]::after {
+  [data-nav].site-nav nav a[href="/dost"]::after {
     animation: dostParticles 8s linear infinite;
   }
-  [data-nav].site-nav nav a[href="/Dost"]:hover {
+  [data-nav].site-nav nav a[href="/dost"]:hover {
     background: linear-gradient(135deg, #5588ff, #3a6bff) !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(100, 150, 255, 0.5);
