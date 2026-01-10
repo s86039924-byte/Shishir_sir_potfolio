@@ -14,7 +14,11 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+const metadataBase = new URL(SITE_URL)
+
 export const metadata: Metadata = {
+  metadataBase,
   title: 'Re-Wise — Transforming Education Through Innovation',
   description:
     'Re-Wise helps students prepare smarter with an integrated platform of practice, analytics, and community.',
