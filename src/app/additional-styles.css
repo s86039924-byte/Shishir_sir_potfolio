@@ -368,7 +368,7 @@ html[data-theme='dark'] .faculty-card:hover {
 
 .faculty-card__photo {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   display: block;
 }
@@ -397,7 +397,7 @@ html[data-theme='dark'] .faculty-card__role {
 .faculty-card__highlights {
   margin: 0;
   padding-left: 1.1rem;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 /* math symbols */
@@ -2461,12 +2461,7 @@ html[data-theme='dark'] .gallery {
   }
 
   /* rail on mobile should not steal width */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
 }
-
 
 /* === FINAL HERO MOBILE OVERRIDE (high specificity) === */
 @media (max-width: 768px) {
@@ -2480,12 +2475,6 @@ html[data-theme='dark'] .gallery {
   }
 
   /* 2. stop parent from clipping */
-  body .rw-hero,
-  body .rw-hero__right {
-    overflow: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
 
   /* 3. make the hero card actually fit */
   body .rw-hero .rw-hero-card,
@@ -2499,11 +2488,6 @@ html[data-theme='dark'] .gallery {
   }
 
   /* 4. ensure the rail viewport also fits */
-  body .rw-rail__viewport,
-  body .rw-rail__track {
-    width: calc(100vw - 2rem) !important;
-    max-width: calc(100vw - 2rem) !important;
-  }
 }
 
 /* ============================

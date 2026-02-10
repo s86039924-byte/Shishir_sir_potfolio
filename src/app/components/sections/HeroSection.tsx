@@ -5,7 +5,6 @@ import { TickerText } from './TickerText';
 import { driveProxy } from '@/lib/drive';
 
 type ResultCard = {
-  exam: string;   // e.g. "JEE Main 2025"
   name: string;   // e.g. "Prakhar Aggarwal"
   label: string;  // e.g. "Percentile" or "All India Rank"
   value: string;  // e.g. "99.85" or "AIR 22"
@@ -20,95 +19,52 @@ export default function HeroSection() {
   const cards: ResultCard[] = useMemo(
     () => [
       {
-        exam: 'JEE Main 2025',
-        name: 'Vedant',
-        label: 'Percentile',
-        value: '99.85',
-        img: 'https://drive.google.com/file/d/12N_OtSzqdU2diYLD84i10qp97lEBnpXr/view?usp=sharing',
-      },
-      {
-        exam: 'JEE Main 2025',
         name: 'Srishti Aggarwal',
         label: 'Percentile',
         value: '99.13',
         img: 'https://drive.google.com/file/d/1c9Z-zDGhBwUSorkNju8P7ch6FtcYtlw-/view?usp=sharing',
       },
       {
-        exam: 'JEE Main 2025',
         name: 'Aditya Kadanga',
         label: 'Percentile',
         value: '96.74',
         img: 'https://drive.google.com/file/d/1yNcvdzKNMaGpNKPd3JWYnzkkZU9YF-PT/view?usp=sharing',
       },
       {
-        exam: 'JEE Main 2024',
-        name: 'Shivansh',
-        label: 'Percentile',
-        value: '96.74',
-        img: 'https://drive.google.com/file/d/13f8SVe3bj5etBEduwCq4UQs6htW-3cZi/view?usp=sharing',
-      },
-      {
-        exam: 'JEE Main 2023',
-        name: 'Param Narayan',
-        label: 'Percentile',
-        value: '99.77',
-        img: 'https://drive.google.com/file/d/1T-h-Gc8arzKetRVJPJ7xPz4-EZ28drfK/view?usp=sharing',
-      },
-      {
-        exam: 'JEE Main 2023',
-        name: 'Sheireya Sharma',
-        label: 'Percentile',
-        value: '99.23',
-        img: 'https://drive.google.com/file/d/1iMhaEX_jpVZxdkDlZsLAG1PFS_ILlYNP/view?usp=sharing',
-      },
-      {
-        exam: 'JEE Advanced 2001',
         name: 'Nitin',
         label: 'AIR',
         value: '1198',
         img: 'https://drive.google.com/file/d/1eQHqQdEnUcLixlVk3dsI3fvWLyYVIwUx/view?usp=sharing',
       },
       {
-        exam: 'JEE Advanced 2001',
         name: 'Ankit Aggarwal',
         label: 'AIR',
         value: '22',
         img: 'https://drive.google.com/file/d/1lY1eqy81W4wYNt4HvbTP5XFf3Pda1AHa/view?usp=sharing',
       },
       {
-        exam: 'JEE Advanced 2001',
         name: 'Prakhar Aggarwal',
         label: 'AIR',
         value: '959',
         img: 'https://drive.google.com/file/d/1AGNecsn0AVSXbmhHp_zfoBpn3v5I_AVG/view?usp=sharing',
       },
       {
-        exam: 'JEE Advanced 2001',
         name: 'Ajay Sharma',
         label: 'AIR',
         value: '982',
         img: 'https://drive.google.com/file/d/112r0Zvp-abTuilGgoT1faqPKR3JfP56m/view?usp=sharing',
       },
       {
-        exam: 'JEE Advanced 2001',
         name: 'Anuj Arora',
         label: 'AIR',
         value: '501',
         img: 'https://drive.google.com/file/d/1vwLTCcytUkD_iR5WRtlL96ipTya33Ulw/view?usp=sharing',
       },
       {
-        exam: 'JEE Advanced 2001',
         name: 'Chirag Jain',
         label: 'AIR',
         value: '529',
         img: 'https://drive.google.com/file/d/1Y5H7o20qvvtLoTUqt6U61C0GloRWMbgM/view?usp=sharing',
-      },
-      {
-        exam: 'JEE Advanced 2001',
-        name: 'Sheireya Sharma',
-        label: 'AIR',
-        value: '99.23',
-        img: 'https://drive.google.com/file/d/1iMhaEX_jpVZxdkDlZsLAG1PFS_ILlYNP/view?usp=sharing',
       },
     ],
     []
@@ -167,13 +123,9 @@ export default function HeroSection() {
               <div className="rw-rail__track">
                 {cards.map((c, idx) => (
                   <article
-                    key={`${c.exam}-${c.name}-${idx}`}
+                    key={`${c.name}-${idx}`}
                     className="result-card result-card--result rw-rail__item"
                   >
-                    <header className="result-card__header">
-                      <div className="result-card__tag">{c.exam}</div>
-                    </header>
-
                     <div className="result-card__body">
                       <div className="result-card__left">
                         <div className="result-card__name">{c.name}</div>

@@ -128,14 +128,6 @@ html[data-theme='dark'] .rw-hero {
     flex-direction: column;
     gap: 1.25rem;
   }
-
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: visible;
-    -webkit-mask-image: none !important;
-            mask-image: none !important;
-  }
 }
 
 .hero-backdrop {
@@ -676,7 +668,6 @@ pre code {
  }
  .btn:active{ transform: translateY(1px); }
 
-
 /* ===== Centering foundation ===== */
 *,
 *::before,
@@ -1196,7 +1187,6 @@ section {
   padding: calc(var(--space-32) * 3) 0;
   position: relative;
 }
-
 
 .section-title .title-text {
   font-size: clamp(28px, 3.2vw, 36px);
@@ -1878,7 +1868,6 @@ section {
   box-shadow: 0 10px 30px rgba(100, 150, 255, 0.5);
 }
 
-
 [data-nav].site-nav .mobile-toggle {
   display: none;
   width: 42px;
@@ -1998,8 +1987,6 @@ section {
 
 /* Optional tiny nudge if your logo wrapper adds padding */
 [data-nav].site-nav .nav-brand { padding-left: 2px; }  /* or 0px */
-
-
 
 /* ===== NAV: full-bleed container, corner logo, larger controls ===== */
 [data-nav].site-nav {
@@ -2126,8 +2113,6 @@ html::before {
   isolation: isolate; /* keeps any section effects local */
 }
 
-
-
 /* === 1) Explicit page background color (theme-aware) === */
 :root{
   /* If you already have a token like --color-background, you can map it here: */
@@ -2211,8 +2196,6 @@ html[data-theme="dark"] {
 
 /* Keep hero content visually “in front” if needed */
 .rw-hero { position: relative; isolation: isolate; }
-
-
 
 /* --- Ensure root paints the solid color, content sits above --- */
 html {
@@ -2316,7 +2299,6 @@ body::before{
 /* Keep sections cleanly above blobs */
 .rw-hero { position: relative; isolation: isolate; }
 
-
 /* === HERO: bigger slogan + lede, roomier CTAs ========================= */
 
 /* Slogan / H1 */
@@ -2371,9 +2353,6 @@ body::before{
     font-size: clamp(42px, 6.2vw, 64px);
   }
 }
-
-
-
 
 /* ----- HERO: layout & type ----- */
 .rw-hero {
@@ -2442,7 +2421,6 @@ body::before{
   box-shadow: var(--shadow-soft);
   font-size: 13px;
 }
-
 
 /* ----- HERO rail polish ----- */
 .rw-hero__right {
@@ -2551,17 +2529,6 @@ body::before{
 }
 
 /* allow touch + smaller screens to stack nicely */
-@media (max-width: 520px) {
-  .result-card {
-    grid-template-columns: 1fr;
-    padding: 12px;
-  }
-  .result-card__media {
-    width: 100%;
-    height: 180px;
-    margin-top: 8px;
-  }
-}
 
 html[data-theme='dark'] .result-card {
   background: linear-gradient(135deg, #40320c, #6b540f 55%, #8a6a12);
@@ -2582,7 +2549,6 @@ img, picture, video, canvas { max-width: 100%; height: auto; display: block; }
 .container { width: min(100%, 1200px); margin-inline: auto; padding-inline: 20px; }
 .section { padding-block: clamp(48px, 8vw, 96px); }
 
-
 /* Page frame */
 body {
   background: var(--bg-primary);
@@ -2598,8 +2564,6 @@ body {
   border-bottom: 1px solid color-mix(in oklab, white, transparent 90%);
   box-shadow: 0 2px 16px color-mix(in oklab, black, transparent 92%);
 }
-
-
 
 /* HERO container & background */
 .rw-hero {
@@ -2722,8 +2686,6 @@ html[data-theme='dark'] .hero__chips li strong {
   color: #facc15;
 }
 
-
-
 /* Contain & fade edges so the loop feels infinite */
 .rw-hero__right {
   overflow: hidden;
@@ -2782,11 +2744,6 @@ html[data-theme='dark'] .hero__chips li strong {
 .result-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* Small screens – stack */
-@media (max-width: 520px) {
-  .result-card { grid-template-columns: 1fr; padding: 12px; }
-  .result-card__media { width: 100%; height: 180px; margin-top: 8px; }
-}
-
 
 /* Consistent container & section rhythm (if not already present) */
 .container { width: min(100%, 1200px); margin-inline: auto; padding-inline: 20px; }
@@ -2794,7 +2751,6 @@ html[data-theme='dark'] .hero__chips li strong {
 
 /* Kill any horizontal overflow from inner wrappers */
 .rw-hero, .rw-rail, [data-scroll-area] { overflow-x: hidden; }
-
 
 /* Coaching-style palette & link accents */
 :root{
@@ -2819,7 +2775,6 @@ body{
 
 /* Kill stray horizontal scroll in tricky areas */
 .rw-hero,.rw-rail,[data-scroll-area]{ overflow-x:hidden; }
-
 
 /* Hero background */
 .rw-hero{
@@ -2909,11 +2864,6 @@ body{
   border-radius:10px; overflow:hidden; align-self:center; background:#f8fafc; border:1px solid rgba(2,6,23,.06);
 }
 .result-card__media img{ width:100%; height:100%; object-fit:cover; display:block; }
-@media (max-width:520px){
-  .result-card{ grid-template-columns:1fr; padding:12px; }
-  .result-card__media{ width:100%; height:180px; margin-top:8px; }
-}
-
 
 /* Simple announcement/notification bar */
 /* Softer backdrop; less neon, more institutional */
@@ -2936,7 +2886,6 @@ html[data-theme='dark'] .rw-hero {
   height: 16%;
   background: linear-gradient(180deg, rgba(15,23,42,.12), rgba(15,23,42,0));
 }
-
 
 /* Keep left content at a readable measure and vertically balanced */
 .rw-hero__inner{
@@ -2971,7 +2920,6 @@ html[data-theme='dark'] .rw-hero {
 }
 .hero__chips li::before{ background: #0e7be7; }
 
-
 /* Wider edge fade so cards don’t look cropped */
 .rw-hero__right{
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
@@ -3002,15 +2950,11 @@ html[data-theme='dark'] .rw-hero {
   border-radius: 10px;
 }
 
-
 /* Add this to the first section below the hero if you use a wrapper like .section */
 .section:first-of-type{
   border-top: 1px solid rgba(2,6,23,.06);
   box-shadow: 0 -30px 80px -40px rgba(2,6,23,.08) inset;
 }
-
-
-
 
 /* --- mobile nav override --- */
 .site-nav {
@@ -3101,8 +3045,6 @@ html[data-theme='dark'] .rw-hero {
 
 }
 
-
-
 /* OLD (kept for reference)
 .nav-brand img,
 .brand-logo {
@@ -3119,7 +3061,6 @@ html[data-theme='dark'] .rw-hero {
   object-fit: contain;
 }
 
-
 /* --- MOBILE HERO FIXES (real override) --- */
 @media (max-width: 768px) {
   /* NEW: mobile – make logo bigger and clearer */
@@ -3129,171 +3070,46 @@ html[data-theme='dark'] .rw-hero {
     max-height: 64px;
   }
   /* make the card actually allowed to be small */
-  .result-card {
-    min-width: 100% !important; /* or 320px if you want fixed */
-    width: 100%;
-    height: auto;
-  }
 
   /* tighten content */
-  .result-card__body {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
 
   /* shrink image box */
-  .result-card__img-wrap {
-    width: 90px !important;
-    height: 90px !important;
-    flex: 0 0 90px;
-  }
-
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
 }
-
 
 /* keep this breakpoint the same as before */
 @media (max-width: 768px) {
   /* make card allowed to shrink */
-  .result-card {
-    min-width: 100% !important;
-    width: 100%;
-    height: auto;
-  }
-
-  .result-card__body {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
 
   /* ✅ shrink but keep positioning for Next/Image */
-  .result-card__img-wrap {
-    position: relative;          /* KEEP THIS */
-    width: 90px !important;
-    height: 90px !important;
-    flex: 0 0 90px;
-    overflow: hidden;
-    border-top: 0;               /* optional */
-  }
 
   /* make whatever is inside fill correctly */
-  .result-card__img-wrap img,
-  .result-card__img-wrap picture,
-  .result-card__media {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
-
 
 /* === FINAL MOBILE OVERRIDES (must be last) === */
 @media (max-width: 768px) {
   /* let cards actually shrink */
-  .result-card {
-    min-width: 100% !important;
-    width: 100%;
-    height: auto;
-  }
 
   /* smaller content layout */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 14px 12px;
-  }
 
   /* shrink image but keep positioning */
-  .result-card__img-wrap {
-    position: relative;
-    width: 90px !important;
-    height: 90px !important;
-    flex: 0 0 90px;
-    overflow: hidden;
-  }
-
-  .result-card__img-wrap img,
-  .result-card__media {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
   /* hero right column shouldn’t force wide mask */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
 }
-
 
 /* === MOBILE OVERRIDES FOR HERO RESULT CARDS === */
 @media (max-width: 768px) {
   /* make card behave like a normal block on phone */
-  .result-card {
-    display: flex;
-    min-width: 100% !important;
-    width: 100%;
-    height: auto;
-  }
 
   /* your desktop used grid (1fr auto); on mobile we keep it simple */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 14px 12px;
-  }
 
   /* THIS was the big boy: shrink it, keep it simple */
-  .result-card__img-wrap {
-    width: 80px;
-    height: 80px;
-    border-left: 0;          /* we don't need the divider on mobile */
-    overflow: hidden;
-    flex: 0 0 80px;
-  }
 
   /* since original was display:block, keep it that way */
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
 
   /* text a hair smaller so it fits beside 80px image */
-  .result-card__name {
-    font-size: 0.9rem;
-  }
-  .result-card__rank {
-    font-size: 1.1rem;
-  }
 
   /* right rail should stop being wide/masked */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
 }
-
-
 
 /* === MOBILE HERO RAIL FIX === */
 @media (max-width: 768px) {
@@ -3307,58 +3123,13 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* the right rail should not be a tall masked column */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;              /* 👈 this removes the long empty area */
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    overflow: visible !important;
-  }
 
   /* keep a horizontal marquee even on mobile */
-  .rw-rail__track {
-    display: inline-flex;
-    flex-direction: row;
-    gap: 12px;
-    white-space: nowrap;
-    height: auto !important;
-    overflow: hidden;
-    animation: rw-rail-marquee 16s linear infinite !important;
-  }
 
   /* cards: full width, auto height */
-  .result-card {
-    display: flex;
-    min-width: 100% !important;
-    width: 100%;
-    height: auto;
-  }
-
-  .result-card__body {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding: 14px 14px 12px;
-  }
 
   /* smaller image so it doesn't push height */
-  .result-card__img-wrap {
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    border-left: 0;
-    flex: 0 0 80px;
-  }
-
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
 }
-
 
 /* === FINAL MOBILE PATCH FOR HERO CARDS & RAIL === */
 @media (max-width: 768px) {
@@ -3371,185 +3142,46 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* stop forcing desktop rail width/mask */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    overflow: visible !important;
-  }
 
   /* horizontal marquee track */
-  .rw-rail__track {
-    display: inline-flex !important;
-    flex-direction: row;
-    gap: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-bottom: 0;
-    animation: rw-rail-marquee 16s linear infinite !important;
-  }
-  .rw-rail__track::-webkit-scrollbar { display: none; }
 
   /* make card actually shrink */
-  .result-card {
-    display: inline-flex;
-    min-width: 85vw !important;  /* 1 card per view */
-    max-width: 85vw;
-    height: auto;
-  }
 
   /* inside layout */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px;
-    width: 100%;
-  }
 
   /* smaller image but KEEP block layout */
-  .result-card__img-wrap {
-    width: 78px;
-    height: 78px;
-    overflow: hidden;
-    border-left: 0;
-    flex: 0 0 78px;
-  }
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
 }
-
-
 
 /* === MOBILE: fix hero result card overflow === */
 @media (max-width: 500px) {
   /* card should fit inside the screen, accounting for page padding */
-  .result-card {
-    /* 100vw minus ~2.5rem (1.25rem left + 1.25rem right) – adjust if your container uses 1rem */
-    flex: 0 0 calc(100vw - 2.5rem) !important;
-    max-width: calc(100vw - 2.5rem) !important;
-    width: calc(100vw - 2.5rem) !important;
-    overflow: hidden;               /* 👈 keeps image inside rounded card */
-    border-radius: 20px;            /* match your desktop radius */
-  }
 
   /* keep row layout */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
 
   /* image stays inside, no hanging to the right */
-  .result-card__img-wrap {
-    width: 78px;
-    height: 78px;
-    flex: 0 0 78px;
-    overflow: hidden;
-    border-left: 0;
-    border-radius: 14px;            /* soften corner so it matches card */
-  }
-
-  .result-card__img-wrap img,
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
 }
-
-
-
-
 
 /* === MOBILE: tighten result card content === */
 @media (max-width: 768px) {
   /* shrink left label column */
-  .result-card__label,
-  .result-card__meta,
-  .result-card .exam-label {
-    /* 👇 try 82px → 90px if text wraps too much */
-    width: 82px;
-    min-width: 82px;
-  }
 
   /* the row that holds label + text + image */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    /* 👇 was 12px, let's make it tighter */
-    gap: 8px;
-    /* 👇 a bit less padding to free space for image */
-    padding: 12px 12px 10px;
-  }
 
   /* text block should be allowed to shrink */
-  .result-card__text,
-  .result-card__content {
-    flex: 1 1 auto;
-    min-width: 0; /* 👈 allow text to shrink instead of pushing image */
-  }
 
   /* image stays the same */
-  .result-card__img-wrap {
-    width: 72px;
-    height: 72px;
-    flex: 0 0 72px;
-  }
 }
-
 
 /* === MOBILE: squeeze label → text so image fits === */
 @media (max-width: 768px) {
   /* the whole card row */
-  .result-card__body {
-    display: flex;
-    align-items: center;
-    gap: 6px;                 /* 👈 was bigger, this is the main fix */
-    padding: 12px 12px 10px;
-  }
 
   /* left label: make it narrower */
-  .result-card > div:first-child,
-  .result-card__label,
-  .result-card .exam-label {
-    flex: 0 0 70px;           /* 👈 was ~80-90px, now tighter */
-    max-width: 70px;
-  }
 
   /* text area: allow it to shrink, don't push image */
-  .result-card > div:nth-child(2),
-  .result-card__content,
-  .result-card__text {
-    flex: 1 1 auto;
-    min-width: 0;             /* 👈 without this, text pushes image out */
-  }
 
   /* image on the right: small, fixed slot */
-  .result-card__img-wrap {
-    flex: 0 0 70px;
-    width: 70px;
-    height: 70px;
-    overflow: hidden;
-    border-left: 0;
-  }
-  .result-card__img-wrap img,
-  .result-card__media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
-
-
 
 /* === MOBILE: fix hero main card width === */
 @media (max-width: 768px) {
@@ -3571,7 +3203,6 @@ html[data-theme='dark'] .rw-hero {
   }
 }
 
-
 /* mobile: let hero card breathe */
 @media (max-width: 768px) {
   .rw-hero {
@@ -3586,7 +3217,6 @@ html[data-theme='dark'] .rw-hero {
   }
 }
 
-
 /* === MOBILE: stop cutting hero cards === */
 @media (max-width: 768px) {
   /* parent hero should NOT clip */
@@ -3596,11 +3226,6 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* the right column (where the toppers rail lives) also clips, so open it */
-  .rw-hero__right {
-    overflow: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
 }
 
 /* === MOBILE: force hero card to fit screen === */
@@ -3625,12 +3250,7 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* make sure the hero wrapper doesn't clip it anymore */
-  .rw-hero,
-  .rw-hero__right {
-    overflow: visible !important;
-  }
 }
-
 
 /* === FINAL HERO MOBILE OVERRIDE (high specificity) === */
 @media (max-width: 768px) {
@@ -3644,12 +3264,6 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* 2. stop parent from clipping */
-  body .rw-hero,
-  body .rw-hero__right {
-    overflow: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
 
   /* 3. make the hero card actually fit */
   body .rw-hero .rw-hero-card,
@@ -3662,7 +3276,6 @@ html[data-theme='dark'] .rw-hero {
     margin: 0 auto !important;
   }
 }
-
 
 /* === MOBILE: clamp hero inner container === */
 @media (max-width: 768px) {
@@ -3695,35 +3308,9 @@ html[data-theme='dark'] .rw-hero {
   }
 
   /* rail shouldn't push width either */
-  .rw-hero__right {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-  }
 }
 
 /* === MOBILE HERO RAIL: horizontal scroll to reveal all cards === */
-@media (max-width: 768px) {
-  .rw-rail__track {
-    display: flex !important;
-    flex-direction: row;
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 8px;
-    scroll-snap-type: x mandatory;
-    animation: none !important;
-  }
-  .rw-rail__track::-webkit-scrollbar { display: none; }
-
-  .result-card {
-    display: flex !important;
-    min-width: 85vw !important;
-    max-width: 85vw;
-    scroll-snap-align: start;
-  }
-}
-
 
 /* === Hero result cards polish === */
 .rw-hero__right .result-card {
@@ -3751,21 +3338,26 @@ html[data-theme='dark'] .rw-hero {
   gap: 14px;
 }
 .rw-hero__right .result-card .result-card__img-wrap {
-  width: 120px;
+  width: 148px;
   height: 100%;
-  min-height: 110px;
+  min-height: 140px;
+  margin-left: auto;
   border-left: 1px solid rgba(250, 204, 21, 0.4);
-  padding-left: 14px;
+  padding-left: 10px;
+  padding-right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .rw-hero__right .result-card .result-card__img-wrap .result-card__media {
-  width: 100%;
+  width: 132px;
+  max-width: 132px;
   height: 100%;
   object-fit: cover;
+  object-position: right center;
   border-radius: 12px;
   overflow: hidden;
+  margin-left: auto;
 }
 .rw-hero__right .result-card .result-card__name {
   color: #7c2d12;
@@ -3794,6 +3386,230 @@ html[data-theme='dark'] .rw-hero__right .result-card .result-card__img-wrap {
   border-left-color: rgba(251, 191, 36, 0.5);
 }
 
-
 .result-card__tag { color: #0f172a; }
 html[data-theme='dark'] .result-card__tag { color: #fef3c7; }
+
+/* === MOBILE: keep hero ticker/title inside viewport === */
+@media (max-width: 768px) {
+  .rw-hero .hero-eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+  }
+
+  .rw-hero .hero-title {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-right: 0;
+    overflow: hidden;
+    text-wrap: balance;
+  }
+
+  .rw-hero .hero-title__brand {
+    display: inline;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .rw-hero .hero-title__ticker {
+    display: inline;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .rw-hero .rw-ticker {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .rw-hero .rw-ticker__item {
+    display: inline;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Strong final fallback for very narrow phones */
+@media (max-width: 420px) {
+  .rw-hero .hero-title {
+    font-size: clamp(1.8rem, 9.2vw, 2.35rem);
+    line-height: 1.06;
+  }
+}
+
+/* === HERO MOBILE LAYOUT REWRITE (FINAL) === */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body .rw-hero {
+    padding-block: 20px 28px;
+    overflow: visible;
+  }
+
+  body .rw-hero > .container,
+  body .rw-hero .hero-content,
+  body .rw-hero .rw-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 14px;
+  }
+
+  body .rw-hero__left,
+  body .rw-hero .hero-copy {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  body .rw-hero .hero-eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 10px;
+    line-height: 1.25;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  body .rw-hero .hero-title {
+    margin: 10px 0 10px;
+    font-size: clamp(34px, 11vw, 44px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  body .rw-hero .hero-title__brand {
+    display: inline;
+    white-space: normal;
+  }
+
+  body .rw-hero .hero-title__ticker {
+    display: block;
+    margin-top: 2px;
+    white-space: normal;
+  }
+
+  body .rw-hero .rw-ticker,
+  body .rw-hero .rw-ticker__item {
+    display: inline;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  body .rw-hero .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  body .rw-hero .hero-pill-row {
+    display: grid;
+    gap: 6px;
+  }
+
+  body .rw-hero__right {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  body .rw-rail {
+    overflow: visible;
+  }
+
+  body .rw-rail__viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  body .rw-rail__track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    white-space: nowrap;
+    will-change: transform;
+    animation: hero-marquee 22s linear infinite;
+    padding: 0;
+  }
+
+  body .rw-rail__track:hover {
+    animation-play-state: paused;
+  }
+
+  body .rw-hero__right .result-card {
+    flex: 0 0 calc(100vw - 32px);
+    width: calc(100vw - 32px);
+    min-width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    height: auto;
+    border-radius: 16px;
+  }
+
+  body .rw-hero__right .result-card .result-card__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 112px;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  body .rw-hero__right .result-card .result-card__img-wrap {
+    width: 112px;
+    min-width: 112px;
+    min-height: 112px;
+    padding-left: 8px;
+    margin-left: 0;
+  }
+
+  body .rw-hero__right .result-card .result-card__img-wrap .result-card__media {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    object-position: center;
+  }
+
+  body .rw-hero__right .result-card .result-card__name {
+    font-size: 1.02rem;
+  }
+
+  body .rw-hero__right .result-card .result-card__rank {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  body .rw-hero .hero-title {
+    font-size: clamp(30px, 10vw, 38px);
+  }
+
+  body .rw-hero__right .result-card {
+    flex-basis: calc(100vw - 24px);
+    width: calc(100vw - 24px);
+    min-width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+  }
+}
