@@ -6,7 +6,6 @@ import ScrollProgress from './components/animations/ScrollProgress'
 import ParticlesBackground from './components/animations/ParticlesBackground'
 import ScrollManager from './components/layout/ScrollManager'
 import Script from 'next/script'
-import { cookies } from 'next/headers'
 
 const inter = Inter({
   subsets: ['latin'],
