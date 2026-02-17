@@ -122,8 +122,7 @@ html[data-theme='dark'] .rw-hero {
   }
 
   .rw-hero > .container,
-  .rw-hero .hero-content,
-  .rw-hero__inner {
+  .rw-hero .hero-content {
     display: flex !important;
     flex-direction: column;
     gap: 1.25rem;
@@ -2363,65 +2362,6 @@ body::before{
   align-items: center;
 }
 
-.rw-hero__inner {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr; /* left a bit wider than right */
-  align-items: center;
-  gap: clamp(24px, 4vw, 48px);
-}
-
-@media (max-width: 960px) {
-  .rw-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-/* tiny eyebrow line */
-.hero__eyebrow {
-  font-size: 12px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-/* main title (TickerText sits inside) */
-.rw-hero__title {
-  font-size: clamp(40px, 7.5vw, 72px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 800;
-  margin: 0 0 14px 0;
-}
-
-/* supporting line */
-.hero-lead {
-  color: var(--text-muted);
-  max-width: 54ch;
-  font-size: clamp(14px, 1.8vw, 16px);
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-
-/* feature chips */
-.hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.hero__chips li {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: var(--border);
-  background: rgba(255,255,255,.04);
-  box-shadow: var(--shadow-soft);
-  font-size: 13px;
-}
-
 /* ----- HERO rail polish ----- */
 .rw-hero__right {
   /* contain everything and fade edges so it feels infinite */
@@ -2482,15 +2422,6 @@ body::before{
   min-width: 0;
 }
 
-.result-card__tag {
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-
 .result-card__name {
   font-weight: 700;
   line-height: 1.2;
@@ -2520,12 +2451,6 @@ body::before{
   display: grid;
   place-items: center;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
-}
-
-.result-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* allow touch + smaller screens to stack nicely */
@@ -2585,107 +2510,6 @@ body {
     radial-gradient(900px 480px at 25% 25%, color-mix(in oklab, white, transparent 92%), transparent 65%);
 }
 
-/* 2-column layout (left wider than right) */
-.rw-hero__inner {
-  position: relative; z-index: 1;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center;
-  gap: clamp(28px, 5vw, 56px);
-}
-@media (max-width: 992px) {
-  .rw-hero__inner { grid-template-columns: 1fr; }
-}
-
-/* Left column content – subtle glass panel for readability */
-.rw-hero__inner > :first-child {
-  display: grid; gap: 12px;
-  padding: clamp(8px, 1.2vw, 14px) clamp(10px, 1.6vw, 18px);
-  border-radius: 14px;
-  background: color-mix(in oklab, canvas, transparent 85%);
-  border: 1px solid color-mix(in oklab, white, transparent 90%);
-  box-shadow: 0 8px 32px color-mix(in oklab, black, transparent 92%);
-}
-
-/* Type scale */
-.hero__eyebrow {
-  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-  color: color-mix(in oklab, currentColor, transparent 40%);
-}
-.rw-hero__title {
-  font-size: clamp(44px, 8vw, 80px);
-  line-height: 1.03; letter-spacing: -0.02em; font-weight: 800;
-  margin: 2px 0 8px;
-}
-/* OLD:
-.hero-lead {
-  color: var(--text-muted);
-  max-width: 54ch;
-  font-size: clamp(14px, 1.8vw, 16px);
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-.hero__chips li {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: var(--border);
-  background: rgba(255,255,255,.04);
-  box-shadow: var(--shadow-soft);
-  font-size: 13px;
-}
-*/
-
-/* detail paragraph under IIT Study Forum – make it bigger + bolder */
-.hero-lead {
-  color: var(--text-primary);
-  max-width: 60ch;
-  font-size: clamp(1.05rem, 0.95rem + 0.9vw, 1.3rem);
-  line-height: 1.75;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-html[data-theme='dark'] .hero-lead {
-  color: #e5e7eb;
-}
-
-/* feature chips */
-.hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 6px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* highlight the three key points */
-.hero__chips li {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.hero__chips li strong {
-  font-weight: 800;
-}
-
-html[data-theme='dark'] .hero__chips li {
-  background: rgba(15, 23, 42, 0.92);
-  border-color: rgba(148, 163, 184, 0.55);
-  color: #e5e7eb;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
-}
-
-html[data-theme='dark'] .hero__chips li strong {
-  color: #facc15;
-}
-
 /* Contain & fade edges so the loop feels infinite */
 .rw-hero__right {
   overflow: hidden;
@@ -2727,10 +2551,6 @@ html[data-theme='dark'] .hero__chips li strong {
 
 /* Left text stack */
 .result-card__left { padding: 10px 0 10px 18px; min-width: 0; }
-.result-card__tag {
-  display: inline-block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-  color: color-mix(in oklab, currentColor, transparent 50%); margin-bottom: 6px;
-}
 .result-card__name { font-weight: 700; margin-bottom: 4px; line-height: 1.2; }
 .result-card__meta { font-size: 12px; color: color-mix(in oklab, currentColor, transparent 45%); margin-bottom: 6px; }
 .result-card__rank { font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
@@ -2741,8 +2561,6 @@ html[data-theme='dark'] .hero__chips li strong {
   border-radius: 12px; overflow: hidden; align-self: center; display: grid; place-items: center;
   background: #fff; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
 }
-.result-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
 /* Small screens – stack */
 
 /* Consistent container & section rhythm (if not already present) */
@@ -2791,43 +2609,6 @@ body{
   pointer-events:none;
 }
 
-/* Two-column hero */
-.rw-hero__inner{
-  position:relative; z-index:1; display:grid; align-items:center;
-  grid-template-columns:1.1fr 1fr; gap:clamp(28px,5vw,56px);
-}
-@media (max-width:992px){ .rw-hero__inner{ grid-template-columns:1fr; } }
-
-/* Left content card */
-.rw-hero__inner > :first-child{
-  background:#ffffffcc; border:1px solid rgba(2,6,23,.06);
-  border-radius:14px; box-shadow:0 10px 32px rgba(2,6,23,.06);
-  padding:clamp(18px,2.2vw,24px);
-}
-
-/* Educational tone typography */
-.hero__eyebrow{
-  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--ink-500); margin-bottom:8px;
-}
-.rw-hero__title{
-  font-size:clamp(40px,7.2vw,72px); line-height:1.06; letter-spacing:-.02em;
-  font-weight:800; color:var(--ink-900); margin:0 0 10px;
-}
-.hero-lead{
-  color:var(--ink-700); max-width:60ch; line-height:1.6;
-  font-size:clamp(14px,1.8vw,17px); margin-bottom:14px;
-}
-
-/* Trust badges */
-.hero__chips{ display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 0; padding:0; list-style:none; }
-.hero__chips li{
-  display:inline-flex; align-items:center; gap:8px; padding:7px 12px;
-  border-radius:999px; background:#f8fafc; border:1px solid rgba(2,6,23,.06);
-  color:var(--ink-700); font-size:13px; font-weight:600;
-}
-.hero__chips li::before{ content:""; width:6px; height:6px; border-radius:999px; background:var(--brand-500); }
-
 /* Edge fade and animation */
 .rw-hero__right{
   overflow:hidden;
@@ -2855,7 +2636,6 @@ body{
   background:linear-gradient(180deg,var(--accent-gold),#eeb539);
 }
 .result-card__left{ padding:10px 0 10px 18px; min-width:0; }
-.result-card__tag{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-500); margin-bottom:6px; }
 .result-card__name{ font-weight:800; color:var(--ink-900); margin-bottom:4px; line-height:1.2; }
 .result-card__meta{ font-size:12px; color:var(--ink-500); margin-bottom:6px; }
 .result-card__rank{ font-size:28px; font-weight:800; letter-spacing:-.02em; color:var(--brand-600); }
@@ -2863,7 +2643,6 @@ body{
   width:clamp(140px,18vw,180px); height:clamp(120px,16vw,160px);
   border-radius:10px; overflow:hidden; align-self:center; background:#f8fafc; border:1px solid rgba(2,6,23,.06);
 }
-.result-card__media img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 /* Simple announcement/notification bar */
 /* Softer backdrop; less neon, more institutional */
@@ -2887,39 +2666,6 @@ html[data-theme='dark'] .rw-hero {
   background: linear-gradient(180deg, rgba(15,23,42,.12), rgba(15,23,42,0));
 }
 
-/* Keep left content at a readable measure and vertically balanced */
-.rw-hero__inner{
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center;
-  gap: clamp(28px, 4.5vw, 52px);
-}
-@media (min-width: 1100px){
-  .rw-hero__inner > :first-child{ max-width: 620px; }
-}
-
-/* Card surface: slightly crisper, less blur */
-.rw-hero__inner > :first-child{
-  background: #ffffffee;
-  border-radius: 12px;
-  box-shadow: 0 12px 28px rgba(2,6,23,.06);
-  border: 1px solid rgba(2,6,23,.06);
-  padding: clamp(20px, 2.4vw, 26px);
-}
-
-/* Title + lead balance */
-.rw-hero__title{ letter-spacing: -0.015em; margin: 2px 0 12px; }
-.hero-lead{ color: #3a4a63; opacity: .95; }
-
-/* Chips: flatter, more academic */
-.hero__chips{ margin-top: 16px; }
-.hero__chips li{
-  background: #f6f9ff;
-  border-color: rgba(2,6,23,.08);
-  box-shadow: 0 2px 8px rgba(2,6,23,.06);
-  font-weight: 600;
-}
-.hero__chips li::before{ background: #0e7be7; }
-
 /* Wider edge fade so cards don’t look cropped */
 .rw-hero__right{
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
@@ -2941,7 +2687,6 @@ html[data-theme='dark'] .rw-hero {
   width: 8px; /* thinner accent stripe */
   background: linear-gradient(180deg, #f3c14b, #e7ae2f);
 }
-.result-card__tag{ color: #6b7a90; }
 .result-card__name{ color: #0f172a; }
 .result-card__rank{ color: #0e7be7; }
 .result-card__media{
@@ -3114,7 +2859,6 @@ html[data-theme='dark'] .rw-hero {
 /* === MOBILE HERO RAIL FIX === */
 @media (max-width: 768px) {
   /* let hero be single column */
-  .rw-hero__inner,
   .rw-hero .hero-content,
   .rw-hero > .container {
     display: flex;
@@ -3152,49 +2896,8 @@ html[data-theme='dark'] .rw-hero {
   /* smaller image but KEEP block layout */
 }
 
-/* === MOBILE: fix hero result card overflow === */
-@media (max-width: 500px) {
-  /* card should fit inside the screen, accounting for page padding */
-
-  /* keep row layout */
-
-  /* image stays inside, no hanging to the right */
-}
-
-/* === MOBILE: tighten result card content === */
-@media (max-width: 768px) {
-  /* shrink left label column */
-
-  /* the row that holds label + text + image */
-
-  /* text block should be allowed to shrink */
-
-  /* image stays the same */
-}
-
-/* === MOBILE: squeeze label → text so image fits === */
-@media (max-width: 768px) {
-  /* the whole card row */
-
-  /* left label: make it narrower */
-
-  /* text area: allow it to shrink, don't push image */
-
-  /* image on the right: small, fixed slot */
-}
-
 /* === MOBILE: fix hero main card width === */
 @media (max-width: 768px) {
-  /* the big white hero card */
-  .rw-hero-card,
-  .hero-main-card,
-  .hero-content-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
-
   /* the container inside hero: reduce side padding so card has room */
   .rw-hero > .container,
   .rw-hero .hero-content {
@@ -3230,21 +2933,9 @@ html[data-theme='dark'] .rw-hero {
 
 /* === MOBILE: force hero card to fit screen === */
 @media (max-width: 768px) {
-  /* the big white card in hero */
-  .rw-hero-card,
-  .hero-main-card,
-  .hero-content-card {
-    width: calc(100vw - 2rem) !important;   /* 1rem left + 1rem right */
-    max-width: calc(100vw - 2rem) !important;
-    box-sizing: border-box;
-    margin: 0 auto;
-    border-radius: 18px;
-  }
-
   /* if the hero container had extra padding, remove it here */
   .rw-hero > .container,
-  .rw-hero .hero-content,
-  .rw-hero__inner {
+  .rw-hero .hero-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -3265,29 +2956,10 @@ html[data-theme='dark'] .rw-hero {
 
   /* 2. stop parent from clipping */
 
-  /* 3. make the hero card actually fit */
-  body .rw-hero .rw-hero-card,
-  body .rw-hero .hero-main-card,
-  body .rw-hero .hero-content-card,
-  body .hero-section .rw-hero-card {
-    width: calc(100vw - 2rem) !important;   /* 1rem side gutters */
-    max-width: calc(100vw - 2rem) !important;
-    box-sizing: border-box;
-    margin: 0 auto !important;
-  }
 }
 
 /* === MOBILE: clamp hero inner container === */
 @media (max-width: 768px) {
-  /* this is the one inspector showed: div.rw-hero__inner.container */
-  .rw-hero__inner.container {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: block !important;
-    grid-template-columns: none !important;
-    overflow: visible !important;
-  }
-
   /* also clamp the other hero containers just in case */
   .rw-hero .container,
   .rw-hero .hero-content {
@@ -3297,16 +2969,6 @@ html[data-theme='dark'] .rw-hero {
     grid-template-columns: none !important;
   }
 
-  /* card itself now fits */
-  .rw-hero .rw-hero-card,
-  .rw-hero .hero-main-card,
-  .rw-hero .hero-content-card {
-    width: calc(100vw - 2rem) !important;  /* 1rem + 1rem gutter */
-    max-width: calc(100vw - 2rem) !important;
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
-
   /* rail shouldn't push width either */
 }
 
@@ -3314,8 +2976,8 @@ html[data-theme='dark'] .rw-hero {
 
 /* === Hero result cards polish === */
 .rw-hero__right .result-card {
-  min-width: clamp(260px, 22vw, 340px);
-  width: clamp(260px, 22vw, 340px);
+  min-width: clamp(295px, 25vw, 380px);
+  width: clamp(295px, 25vw, 380px);
   height: auto;
   background: linear-gradient(135deg, #fff1c1, #ffd89c 55%, #ffc46a);
   border: 1px solid rgba(240, 180, 50, 0.55);
@@ -3327,9 +2989,6 @@ html[data-theme='dark'] .rw-hero {
   width: 8px;
   background: linear-gradient(180deg, #fbbf24, #f97316);
 }
-.rw-hero__right .result-card .result-card__header {
-  padding: 12px 16px 0;
-}
 .rw-hero__right .result-card .result-card__body {
   padding: 12px 16px 16px;
   display: grid;
@@ -3338,9 +2997,9 @@ html[data-theme='dark'] .rw-hero {
   gap: 14px;
 }
 .rw-hero__right .result-card .result-card__img-wrap {
-  width: 148px;
+  width: 164px;
   height: 100%;
-  min-height: 140px;
+  min-height: 154px;
   margin-left: auto;
   border-left: 1px solid rgba(250, 204, 21, 0.4);
   padding-left: 10px;
@@ -3350,11 +3009,11 @@ html[data-theme='dark'] .rw-hero {
   justify-content: flex-end;
 }
 .rw-hero__right .result-card .result-card__img-wrap .result-card__media {
-  width: 132px;
-  max-width: 132px;
+  width: 148px;
+  max-width: 148px;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
+  object-position: center center;
   border-radius: 12px;
   overflow: hidden;
   margin-left: auto;
@@ -3385,9 +3044,6 @@ html[data-theme='dark'] .rw-hero__right .result-card .result-card__meta {
 html[data-theme='dark'] .rw-hero__right .result-card .result-card__img-wrap {
   border-left-color: rgba(251, 191, 36, 0.5);
 }
-
-.result-card__tag { color: #0f172a; }
-html[data-theme='dark'] .result-card__tag { color: #fef3c7; }
 
 /* === MOBILE: keep hero ticker/title inside viewport === */
 @media (max-width: 768px) {
@@ -3461,8 +3117,7 @@ html[data-theme='dark'] .result-card__tag { color: #fef3c7; }
   }
 
   body .rw-hero > .container,
-  body .rw-hero .hero-content,
-  body .rw-hero .rw-hero__inner {
+  body .rw-hero .hero-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;

@@ -31,6 +31,30 @@ export default function HeroSection() {
         img: 'https://drive.google.com/file/d/1yNcvdzKNMaGpNKPd3JWYnzkkZU9YF-PT/view?usp=sharing',
       },
       {
+        name: 'Dhruv Maheshwari',
+        label: 'Percentile',
+        value: '96.79',
+        img: 'https://drive.google.com/file/d/1FEGwxN-fm6bWCQpRIh1aaFqzJ9WtYtoM/view?usp=sharing',
+      },
+            {
+        name: 'Anmol yadav',
+        label: 'Percentile',
+        value: '99.65',
+        img: 'https://drive.google.com/file/d/1ucvP3SOVxVu4bgptmxSSzCsIYZlVO0bJ/view?usp=sharing',
+      },
+                  {
+        name: 'Mukul Saini',
+        label: 'Percentile',
+        value: '99.6',
+        img: 'https://drive.google.com/file/d/1TxXRZfY2mOwzSuaAkbnwfL31YhJmp1Gr/view?usp=sharing',
+      },
+                  {
+        name: 'Ansh Goyal',
+        label: 'Percentile',
+        value: '99.23',
+        img: 'https://drive.google.com/file/d/1KBmgdEMuWDYeS7vhM9NpOSLYOEoNkqXQ/view?usp=sharing',
+      },
+      {
         name: 'Nitin',
         label: 'AIR',
         value: '1198',
@@ -44,8 +68,8 @@ export default function HeroSection() {
       },
       {
         name: 'Prakhar Aggarwal',
-        label: 'AIR',
-        value: '959',
+        label: 'Percentile',
+        value: '99.86',
         img: 'https://drive.google.com/file/d/1AGNecsn0AVSXbmhHp_zfoBpn3v5I_AVG/view?usp=sharing',
       },
       {
