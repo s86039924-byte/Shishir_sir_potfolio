@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { LOGO } from '@/lib/constants'
 
 const LOGO_SRC = LOGO
 
 export default function Navigation() {
+  const pathname = usePathname()
+  const isDostRoute = pathname === '/dost' || pathname.startsWith('/dost/')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
@@ -43,8 +46,19 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const root = document.documentElement
+    root.style.setProperty('--nav-height', isDostRoute ? '0px' : '72px')
+
+    return () => {
+      root.style.removeProperty('--nav-height')
+    }
+  }, [isDostRoute])
+
   // close on route click
   const handleNavClick = () => setIsMobileMenuOpen(false)
+
+  if (isDostRoute) return null
 
   return (
     <header data-nav className={`site-nav ${isScrolled ? 'scrolled' : ''}`}>

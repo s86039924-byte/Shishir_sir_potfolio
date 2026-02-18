@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const ACAZDA_ORIGIN = "https://www.acadza.com";
 
@@ -34,6 +35,7 @@ function deleteCookie(name: string) {
 }
 
 export default function DostClient() {
+    const router = useRouter();
     const [showPopup, setShowPopup] = useState(false);
     const [loginId, setLoginId] = useState("");
     const [password, setPassword] = useState("");
@@ -124,6 +126,15 @@ export default function DostClient() {
             {showPopup ? (
                 <div className="popup">
                     <div className="popupContent">
+                        <button
+                            type="button"
+                            className="popupClose"
+                            aria-label="Close login popup"
+                            onClick={() => router.push("/")}
+                        >
+                            ×
+                        </button>
+
                         <h3>Enter Details</h3>
 
                         <input
@@ -145,7 +156,7 @@ export default function DostClient() {
 
                         {errorMsg ? <div className="error">{errorMsg}</div> : null}
 
-                        <button onClick={saveData}>Submit</button>
+                        <button className="popupSubmit" onClick={saveData}>Submit</button>
                     </div>
                 </div>
             ) : null}
@@ -191,12 +202,41 @@ export default function DostClient() {
         }
 
         .popupContent {
+          position: relative;
           background: #fff;
           padding: 20px;
           border-radius: 10px;
           width: 300px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
           text-align: center;
+        }
+
+        .popupClose {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 26px;
+          height: 26px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          border-radius: 999px;
+          background: transparent;
+          color: #475569;
+          font-size: 20px;
+          line-height: 1;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        .popupClose:hover {
+          background: rgba(15, 23, 42, 0.08);
+        }
+
+        .popupClose:focus-visible {
+          outline: 2px solid #93c5fd;
+          outline-offset: 1px;
         }
 
         .popupContent input {
@@ -208,7 +248,7 @@ export default function DostClient() {
           outline: none;
         }
 
-        .popupContent button {
+        .popupSubmit {
           background: #007bff;
           color: white;
           padding: 10px 15px;
@@ -217,7 +257,7 @@ export default function DostClient() {
           cursor: pointer;
         }
 
-        .popupContent button:hover {
+        .popupSubmit:hover {
           background: #0056b3;
         }
 
