@@ -6,8 +6,7 @@
 }
 
 /* subtle lift for highlighted sections */
-.section--accent,
-.highlight-section {
+.section--accent, .highlight-section {
   background: var(--bg-accent);
 }
 
@@ -647,10 +646,7 @@ html[data-theme='dark'] .chem-bond {
     filter: blur(28px);
   }
 
-  .rw-math-symbol,
-  .rw-chem-orbit,
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster {
+  .rw-math-symbol, .rw-chem-orbit, .rw-phys-pulley, .rw-chem-atom-cluster {
     display: none;
   }
 
@@ -660,9 +656,7 @@ html[data-theme='dark'] .chem-bond {
 }
 
 /* === hero background adjustments === */
-.rw-hero,
-.hero-section,
-.hero-shell {
+.rw-hero, .hero-section {
   background: linear-gradient(
     135deg,
     var(--bg-secondary) 0%,
@@ -671,9 +665,7 @@ html[data-theme='dark'] .chem-bond {
   );
 }
 
-html[data-theme='dark'] .rw-hero,
-html[data-theme='dark'] .hero-section,
-html[data-theme='dark'] .hero-shell {
+html[data-theme='dark'] .rw-hero, html[data-theme='dark'] .hero-section, html[data-theme='dark'] .hero-shell {
   background: linear-gradient(
     135deg,
     var(--bg-primary) 0%,
@@ -683,20 +675,14 @@ html[data-theme='dark'] .hero-shell {
 }
 
 /* hero content card */
-.rw-hero .hero-card,
-.hero-section .hero-card,
-.rw-hero .panel,
-.hero-section .panel {
+.rw-hero .hero-card, .hero-section .hero-card, .rw-hero .panel, .hero-section .panel {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(226, 232, 240, 0.7);
   border-radius: 18px;
   backdrop-filter: blur(14px);
 }
 
-html[data-theme='dark'] .rw-hero .hero-card,
-html[data-theme='dark'] .hero-section .hero-card,
-html[data-theme='dark'] .rw-hero .panel,
-html[data-theme='dark'] .hero-section .panel {
+html[data-theme='dark'] .rw-hero .hero-card, html[data-theme='dark'] .hero-section .hero-card, html[data-theme='dark'] .rw-hero .panel, html[data-theme='dark'] .hero-section .panel {
   background: rgba(2, 6, 23, 0.4);
   border: 1px solid rgba(148, 163, 184, 0.4);
   box-shadow: 0 18px 40px rgba(2, 6, 23, 0.65);
@@ -716,28 +702,6 @@ html[data-theme='dark'] .hero-section .panel {
 }
 
 /* ===== CHANNELS SECTION ===== */
-.channels {
-  background: var(--bg-secondary);
-  border-top: 1px solid rgba(226, 232, 240, 0.3);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.3);
-}
-
-.channels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: var(--space-32);
-}
-
-.channel-card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-32);
-  transition: all var(--duration-normal) var(--ease-standard);
-  position: relative;
-  overflow: hidden;
-}
 
 .channel-card.jee-neet::before {
   content: '';
@@ -781,32 +745,6 @@ html[data-theme='dark'] .hero-section .panel {
   margin-bottom: var(--space-24);
 }
 
-.channel-icon {
-  font-size: var(--font-size-4xl);
-  color: var(--color-primary);
-}
-
-.channel-name {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-}
-
-.channel-target {
-  background: var(--color-secondary);
-  padding: var(--space-12) var(--space-24);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--space-24);
-  display: inline-block;
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-}
-
-.channel-content {
-  margin-bottom: var(--space-24);
-}
-
 .channel-content h4 {
   color: var(--color-primary);
   margin-bottom: var(--space-16);
@@ -834,18 +772,6 @@ html[data-theme='dark'] .hero-section .panel {
   left: 0;
   color: var(--color-teal-600);
   font-size: var(--font-size-sm);
-}
-
-.channel-goal {
-  background: var(--color-bg-1);
-  padding: var(--space-24);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-}
-
-.channel-goal strong {
-  color: var(--color-teal-600);
 }
 
 /* ===== TESTIMONIALS SECTION ===== */
@@ -895,50 +821,10 @@ html[data-theme='dark'] .hero-section .panel {
   border-radius: 999px;
 }
 
-.testimonials-scroll {
-  display: flex;
-  gap: 28px;
-  overflow-x: auto;
-  padding: 0 16px 24px 16px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-
-.testimonials-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.testimonials-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.06);
-  border-radius: 999px;
-}
-
-.testimonials-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #0ea5e9, #06b6d4);
-  border-radius: 999px;
-  transition: background 0.3s ease;
-}
-
 /* Testimonials Grid Section */
 .testimonials {
   padding: 80px 0;
   background: var(--bg-primary);
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.testimonial-card {
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px var(--card-shadow);
-  padding: 28px;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -953,19 +839,6 @@ html[data-theme='dark'] .hero-section .panel {
   margin-bottom: 20px;
 }
 
-.testimonial-avatar {
-  width: 64px;
-  height: 64px;
-  min-width: 64px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-accent);
-  border: 2px solid var(--btn-primary);
-}
-
 .testimonial-avatar img {
   width: 100%;
   height: 100%;
@@ -973,92 +846,8 @@ html[data-theme='dark'] .hero-section .panel {
   border-radius: 50%;
 }
 
-.avatar-initials {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--btn-primary);
-}
-
-.testimonial-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.testimonial-name {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 2px;
-}
-
-.testimonial-achievement {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--btn-primary);
-  margin-bottom: 2px;
-}
-
-.testimonial-course {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.testimonial-stars {
-  display: flex;
-  gap: 3px;
-  margin-top: 6px;
-}
-
-.star {
-  color: #fbbf24;
-  font-size: 0.95rem;
-  opacity: 0.4;
-}
-
 .star.active {
   opacity: 1;
-}
-
-.testimonial-text {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.t-empty {
-  text-align: center;
-  font-size: 1.05rem;
-  color: #6b7280;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  border: 1px dashed #e5e7eb;
-}
-
-@media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .testimonial-card {
-    padding: 20px;
-  }
-
-  .testimonial-avatar {
-    width: 56px;
-    height: 56px;
-  }
-
-  .testimonial-name {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.85rem;
-  }
 }
 
 /* ===== GALLERY SECTION ===== */
@@ -1170,18 +959,18 @@ html[data-theme='dark'] .hero-section .panel {
   transform: scale(1.08);
 }
 
-.gallery-card--video{
+.gallery-card--video {
   border: none;
   background: transparent;
   box-shadow: none;
   min-width: 360px;
   padding-bottom: 0;
 }
-.gallery-card--video .gallery-thumb{
+.gallery-card--video .gallery-thumb {
   border-radius: 26px;
   overflow: hidden;
 }
-.gallery-card--video .gallery-chip{
+.gallery-card--video .gallery-chip {
   background: rgba(15, 23, 42, 0.7);
 }
 
@@ -1245,27 +1034,6 @@ html[data-theme='dark'] .hero-section .panel {
 }
 
 /* ===== DIFFERENTIATORS SECTION ===== */
-.differentiators {
-  background: var(--color-bg-4);
-}
-
-.differentiators-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-32);
-}
-
-.diff-card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-32);
-  text-align: center;
-  transition: all var(--duration-normal) var(--ease-standard);
-  position: relative;
-  overflow: hidden;
-}
 
 .diff-card::before {
   content: '';
@@ -1288,31 +1056,6 @@ html[data-theme='dark'] .hero-section .panel {
 .diff-card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: var(--shadow-lg);
-}
-
-.diff-icon {
-  font-size: var(--font-size-4xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-24);
-  position: relative;
-  z-index: 2;
-}
-
-.diff-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  margin-bottom: var(--space-16);
-  position: relative;
-  z-index: 2;
-}
-
-.diff-description {
-  opacity: 0.9;
-  line-height: var(--line-height-normal);
-  position: relative;
-  z-index: 2;
-  color: var(--color-text);
 }
 
 /* ===== CTA SECTION ===== */
@@ -1387,9 +1130,7 @@ html[data-theme='dark'] .hero-section .panel {
   color: var(--color-text);
 }
 
-.cta-card:hover .cta-icon,
-.cta-card:hover .cta-title,
-.cta-card:hover .cta-description {
+.cta-card:hover .cta-icon, .cta-card:hover .cta-title, .cta-card:hover .cta-description {
   color: var(--color-cream-50);
 }
 
@@ -1417,27 +1158,6 @@ html[data-theme='dark'] .hero-section .panel {
   color: var(--color-text);
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-24);
-  margin-bottom: var(--space-24);
-}
-
-.social-link {
-  font-size: var(--font-size-2xl);
-  text-decoration: none;
-  transition: all var(--duration-fast) var(--ease-standard);
-  padding: var(--space-16);
-  border-radius: var(--radius-full);
-  background: var(--color-secondary);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .social-link:hover {
   transform: translateY(-5px) scale(1.2);
   background: var(--color-primary);
@@ -1458,17 +1178,11 @@ html[data-theme='dark'] .hero-section .panel {
 
 /* ===== ADDITIONAL RESPONSIVE STYLES ===== */
 @media (max-width: 1024px) {
-  .channels-grid {
-    grid-template-columns: 1fr;
-  }
   
-  .testimonials-scroll {
-    padding: 0 var(--space-16);
-  }
   
-  .testimonial-card {
-    flex: 0 0 350px;
-  }
+  
+  
+  
   
   .gallery-card.large {
     grid-column: span 1;
@@ -1476,14 +1190,9 @@ html[data-theme='dark'] .hero-section .panel {
 }
 
 @media (max-width: 768px) {
-  .testimonials-scroll {
-    padding: 0;
-  }
   
-  .testimonial-card {
-    flex: 0 0 300px;
-    padding: var(--space-24);
-  }
+  
+  
   
   .gallery-filters {
     gap: var(--space-8);
@@ -1494,50 +1203,31 @@ html[data-theme='dark'] .hero-section .panel {
     font-size: var(--font-size-sm);
   }
   
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: 150px;
-  }
   
-  .gallery-card.large,
-  .gallery-card.medium {
+  
+  .gallery-card.large, .gallery-card.medium {
     grid-column: span 1;
     grid-row: span 2;
   }
   
-  .differentiators-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-24);
-  }
+  
 }
 
 @media (max-width: 480px) {
-  .channels-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-20);
-  }
   
-  .channel-card {
-    padding: var(--space-20);
-  }
+  
+  
   
   .channel-header {
     gap: var(--space-16);
     margin-bottom: var(--space-20);
   }
   
-  .channel-icon {
-    font-size: var(--font-size-3xl);
-  }
   
-  .channel-name {
-    font-size: var(--font-size-xl);
-  }
   
-  .testimonial-card {
-    flex: 0 0 280px;
-    padding: var(--space-20);
-  }
+  
+  
+  
   
   .testimonial-header {
     flex-direction: column;
@@ -1546,15 +1236,9 @@ html[data-theme='dark'] .hero-section .panel {
     gap: var(--space-16);
   }
   
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 120px;
-    gap: var(--space-16);
-  }
   
-  .gallery-card.large,
-  .gallery-card.medium,
-  .gallery-card.small {
+  
+  .gallery-card.large, .gallery-card.medium, .gallery-card.small {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -1563,34 +1247,25 @@ html[data-theme='dark'] .hero-section .panel {
     grid-template-columns: 1fr;
   }
   
-  .diff-card,
   .cta-card {
     padding: var(--space-20);
   }
   
-  .diff-icon,
   .cta-icon {
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-16);
   }
   
-  .diff-title,
   .cta-title {
     font-size: var(--font-size-lg);
   }
   
-  .social-links {
-    gap: var(--space-16);
-  }
   
-  .social-link {
-    padding: var(--space-12);
-    font-size: var(--font-size-xl);
-  }
+  
+  
 }
 
-.rw-hero .container,
-.rw-hero .hero-content{
+.rw-hero .container, .rw-hero .hero-content {
   max-width: none !important;
   width: 100%;
   display: grid !important;
@@ -1654,28 +1329,28 @@ html[data-theme='dark'] .hero-section .panel {
 }
 
 /* ===== Founders: CTA (centered) ===== */
-.fs-cta{
+.fs-cta {
   text-align:center;
   max-width: 760px;
   margin: 48px auto 0;
   padding: 8px 12px;
 }
-.fs-cta-title{
+.fs-cta-title {
   font-size: clamp(1.1rem, 1rem + .6vw, 1.5rem);
   font-weight: 800;
   margin: 0 0 6px;
 }
-.fs-cta-sub{
+.fs-cta-sub {
   margin: 0 auto 14px;
   opacity: .85;
 }
-.fs-cta-actions{
+.fs-cta-actions {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
 }
-.fs-cta .btn{
+.fs-cta .btn {
   height: 44px;
   padding: 0 18px;
   border-radius: 999px;
@@ -1688,14 +1363,13 @@ html[data-theme='dark'] .hero-section .panel {
   justify-content:center;
   text-decoration:none;
 }
-.fs-cta .btn-primary{
+.fs-cta .btn-primary {
   border-color: transparent;
   background: linear-gradient(135deg, #22c1d6, #16b3c4);
   color: #0b1220;
   font-weight: 700;
 }
-.fs-cta .btn-ghost:hover,
-.fs-cta .btn-primary:hover{ filter: brightness(1.05); }
+.fs-cta .btn-ghost:hover, .fs-cta .btn-primary:hover { filter: brightness(1.05); }
 
 /* ===== Hero typography tweaks ===== */
 /* OLD:
@@ -1708,14 +1382,6 @@ html[data-theme='dark'] .hero-section .panel {
 */
 
 /* NEW: details paragraph more visible */
-.hero-lead {
-  margin: 14px 0 20px;
-  font-size: clamp(1.05rem, 0.95rem + 0.9vw, 1.3rem);
-  line-height: 1.7;
-  font-weight: 500;
-  color: var(--text-primary);
-  opacity: 0.97;
-}
 
 html[data-theme='dark'] .hero-lead {
   color: #e5e7eb;
@@ -1723,8 +1389,7 @@ html[data-theme='dark'] .hero-lead {
 }
 
 /* Highlight the top slogan / eyebrow (“Since 1999…”) */
-.rw-hero .hero__eyebrow,
-.rw-hero .hero-eyebrow {
+.rw-hero .hero__eyebrow, .rw-hero .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1739,8 +1404,7 @@ html[data-theme='dark'] .hero-lead {
   font-style: italic;
 }
 
-.rw-hero .hero__eyebrow::before,
-.rw-hero .hero-eyebrow::before {
+.rw-hero .hero__eyebrow::before, .rw-hero .hero-eyebrow::before {
   content: '';
   width: 8px;
   height: 8px;
@@ -1748,8 +1412,7 @@ html[data-theme='dark'] .hero-lead {
   background: linear-gradient(135deg, #f97316, #facc15);
 }
 
-html[data-theme='dark'] .rw-hero .hero__eyebrow,
-html[data-theme='dark'] .rw-hero .hero-eyebrow {
+html[data-theme='dark'] .rw-hero .hero__eyebrow, html[data-theme='dark'] .rw-hero .hero-eyebrow {
   background: rgba(15, 23, 42, 0.94);
   color: #e5e7eb;
 }
@@ -1802,12 +1465,12 @@ html[data-theme='dark'] .rw-hero .hero-eyebrow {
 }
 
 /* Pills: slightly bolder + colored dot */
-.rw-hero .hero__chips{
+.rw-hero .hero__chips {
   margin-top: 16px;
   gap: 12px;
 }
 
-.rw-hero .hero__chips li{
+.rw-hero .hero__chips li {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1816,12 +1479,12 @@ html[data-theme='dark'] .rw-hero .hero-eyebrow {
   color: #0f172a;
 }
 
-html[data-theme='dark'] .rw-hero .hero__chips li{
+html[data-theme='dark'] .rw-hero .hero__chips li {
   background: rgba(15,23,42,0.9);
   color: var(--text-primary);
 }
 
-.rw-hero .hero__chips li::before{
+.rw-hero .hero__chips li::before {
   content: '';
   width: 6px;
   height: 6px;
@@ -2040,26 +1703,18 @@ html[data-theme='dark'] .director-card::before {
    ========================================================= */
 
 /* make these sections relative so we can paint inside */
-.rw-hero,
-.channels,
-.testimonials,
-.gallery {
+.rw-hero, .testimonials, .gallery {
   position: relative;
   overflow: hidden;
   background: rgba(249, 250, 251, 0.9);
 }
 
-html[data-theme='dark'] .channels,
-html[data-theme='dark'] .testimonials,
-html[data-theme='dark'] .gallery {
+html[data-theme='dark'] .channels, html[data-theme='dark'] .testimonials, html[data-theme='dark'] .gallery {
   background: rgba(15, 23, 42, 0.65);
 }
 
 /* 1) common wrapper for subject shapes */
-.rw-hero .acad-bg,
-.channels .acad-bg,
-.testimonials .acad-bg,
-.gallery .acad-bg {
+.rw-hero .acad-bg, .testimonials .acad-bg, .gallery .acad-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -2067,10 +1722,7 @@ html[data-theme='dark'] .gallery {
 }
 
 /* we’ll drop this div via ::before so you don’t have to edit TSX */
-.rw-hero::before,
-.channels::before,
-.testimonials::before,
-.gallery::before {
+.rw-hero::before, .channels::before, .testimonials::before, .gallery::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -2094,21 +1746,7 @@ html[data-theme='dark'] .rw-hero::before {
 }
 
 /* 3) WAVE GRAPH (like your first image) */
-.acad-wave {
-  position: absolute;
-  top: 14%;
-  left: -8%;
-  width: 120%;
-  height: 110px;
-  background-image:
-    linear-gradient(120deg, rgba(37, 99, 235, 0.7) 0%, rgba(37, 99, 235, 0) 55%),
-    linear-gradient(120deg, rgba(236, 72, 153, 0.75) 0%, rgba(236, 72, 153, 0) 50%);
-  background-size: 280px 110px;
-  mix-blend-mode: normal;
-  opacity: 0.35;
-  animation: acadWaveSlide 20s linear infinite;
-  transform: rotate(-1deg);
-}
+
 html[data-theme='dark'] .acad-wave {
   opacity: 0.18;
 }
@@ -2118,14 +1756,7 @@ html[data-theme='dark'] .acad-wave {
 }
 
 /* 4) PHYSICS PENDULUM / NEWTON’S CRADLE */
-.acad-pendulum {
-  position: absolute;
-  top: 55%;
-  right: 6%;
-  width: 150px;
-  height: 120px;
-  opacity: 0.45;
-}
+
 .acad-pendulum::before {
   content: '';
   position: absolute;
@@ -2135,14 +1766,7 @@ html[data-theme='dark'] .acad-wave {
   height: 2px;
   background: rgba(15, 23, 42, 0.25);
 }
-.acad-ball {
-  position: absolute;
-  top: 6px;
-  width: 2px;
-  height: 70px;
-  background: rgba(15, 23, 42, 0.12);
-  transform-origin: top center;
-}
+
 .acad-ball::after {
   content: '';
   position: absolute;
@@ -2157,9 +1781,7 @@ html[data-theme='dark'] .acad-wave {
 html[data-theme='dark'] .acad-ball::after {
   background: rgba(22, 32, 51, 0.85);
 }
-.acad-ball--swing {
-  animation: pendSwing 3.6s ease-in-out infinite;
-}
+
 @keyframes pendSwing {
   0% { transform: rotate(18deg); }
   50% { transform: rotate(-2deg); }
@@ -2167,23 +1789,7 @@ html[data-theme='dark'] .acad-ball::after {
 }
 
 /* 5) ATOM STRUCTURE */
-.acad-atom {
-  position: absolute;
-  top: 18%;
-  right: 15%;
-  width: 130px;
-  height: 130px;
-  border-radius: 9999px;
-  opacity: 0.35;
-}
-.acad-atom-ring {
-  position: absolute;
-  inset: 0;
-  border: 1.6px solid rgba(37, 99, 235, 0.45);
-  border-radius: 9999px;
-  transform-origin: center;
-  animation: atomSpin 16s linear infinite;
-}
+
 .acad-atom-ring:nth-child(2) {
   transform: rotate(60deg);
   animation-duration: 22s;
@@ -2192,16 +1798,7 @@ html[data-theme='dark'] .acad-ball::after {
   transform: rotate(120deg);
   animation-duration: 28s;
 }
-.acad-atom-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  background: rgba(15, 23, 42, 0.6);
-  border-radius: 9999px;
-  transform: translate(-50%, -50%);
-}
+
 html[data-theme='dark'] .acad-atom-core {
   background: rgba(248, 250, 252, 0.8);
 }
@@ -2211,28 +1808,13 @@ html[data-theme='dark'] .acad-atom-core {
 }
 
 /* 6) CHEMISTRY DOODLES (flask / molecule icons feeling) */
-.acad-chem-scribble {
-  position: absolute;
-  bottom: -20px;
-  left: 8%;
-  width: 230px;
-  height: 130px;
-  background-image:
-    radial-gradient(circle, rgba(37, 99, 235, 0.35) 2px, rgba(0,0,0,0) 2px),
-    radial-gradient(circle, rgba(236, 72, 153, 0.35) 3px, rgba(0,0,0,0) 3px);
-  background-size: 60px 60px, 110px 110px;
-  opacity: 0.35;
-  filter: drop-shadow(0 12px 28px rgba(15, 23, 42, 0.08));
-}
+
 html[data-theme='dark'] .acad-chem-scribble {
   opacity: 0.16;
 }
 
 /* 7) apply to sections */
-.rw-hero::after,
-.channels::after,
-.testimonials::after,
-.gallery::after {
+.rw-hero::after, .channels::after, .testimonials::after, .gallery::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -2249,24 +1831,12 @@ html[data-theme='dark'] .acad-chem-scribble {
   position: relative;
   z-index: 2;
 }
-.rw-hero .acad-wave,
-.rw-hero .acad-pendulum,
-.rw-hero .acad-atom,
-.rw-hero .acad-chem-scribble {
+.rw-hero .acad-wave, .rw-hero .acad-pendulum, .rw-hero .acad-atom, .rw-hero .acad-chem-scribble {
   /* if you inject manually */
 }
 
 /* channels / testimonials / gallery get fewer shapes */
-.channels .acad-wave {
-  top: 6%;
-  opacity: 0.22;
-}
-.channels .acad-atom {
-  top: auto;
-  bottom: 12%;
-  right: 8%;
-  opacity: 0.22;
-}
+
 .testimonials .acad-chem-scribble {
   bottom: -26px;
   left: 4%;
@@ -2277,37 +1847,24 @@ html[data-theme='dark'] .acad-chem-scribble {
 }
 
 /* MOBILE: tone it down */
-@media (max-width: 768px) {
-  .acad-wave,
-  .acad-pendulum,
-  .acad-atom,
-  .acad-chem-scribble {
-    display: none;
-  }
-}
 
 /* === MOBILE ANIMATION OVERRIDE === */
 /* show a few subject animations on small screens, just smaller & softer */
 @media (max-width: 768px) {
   /* allow sections to show them */
-  .rw-hero,
-  .channels,
-  .testimonials,
-  .gallery {
+  .rw-hero, .testimonials, .gallery {
     overflow: visible;
   }
 
   /* show math + atom again */
-  .rw-math-symbol,
-  .rw-chem-orbit {
+  .rw-math-symbol, .rw-chem-orbit {
     display: block;
     transform: scale(0.75);
     opacity: 0.22;
   }
 
   /* keep the heavy ones off or smaller */
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster {
+  .rw-phys-pulley, .rw-chem-atom-cluster {
     display: block;
     transform: scale(0.6);
     opacity: 0.18;
@@ -2328,10 +1885,7 @@ html[data-theme='dark'] .acad-chem-scribble {
 }
 
 /* 2) Ensure main sections are above the bg layer but still allow it to show */
-.rw-hero,
-.channels,
-.testimonials,
-.gallery {
+.rw-hero, .testimonials, .gallery {
   position: relative;
   z-index: 1;
 }
@@ -2339,31 +1893,22 @@ html[data-theme='dark'] .acad-chem-scribble {
 /* 3) If you previously hid animations on mobile, override that here */
 @media (max-width: 768px) {
   /* stop clipping background shapes */
-  .rw-hero,
-  .channels,
-  .testimonials,
-  .gallery {
+  .rw-hero, .testimonials, .gallery {
     overflow: visible;
   }
 
   /* SHOW the subject layers again (they might have been display:none before) */
-  .rw-math-symbol,
-  .rw-chem-orbit,
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster,
-  .rw-physics-wave {
+  .rw-math-symbol, .rw-chem-orbit, .rw-phys-pulley, .rw-chem-atom-cluster, .rw-physics-wave {
     display: block;
   }
 
   /* scale down + soften so they aren't overwhelming on small screens */
-  .rw-math-symbol,
-  .rw-chem-orbit {
+  .rw-math-symbol, .rw-chem-orbit {
     transform: scale(0.75);
     opacity: 0.22;
   }
 
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster {
+  .rw-phys-pulley, .rw-chem-atom-cluster {
     transform: scale(0.6);
     opacity: 0.18;
   }
@@ -2373,38 +1918,27 @@ html[data-theme='dark'] .acad-chem-scribble {
   }
 
   /* pull heavier shapes into view so they don't land off-screen */
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster {
+  .rw-phys-pulley, .rw-chem-atom-cluster {
     top: 66% !important;
     left: 6% !important;
   }
 
   /* 4) Make section backgrounds slightly translucent on mobile so bg is visible */
   /* Light mode */
-  html[data-theme='light'] .rw-hero,
-  html[data-theme='light'] .channels,
-  html[data-theme='light'] .testimonials,
-  html[data-theme='light'] .gallery {
+  html[data-theme='light'] .rw-hero, html[data-theme='light'] .channels, html[data-theme='light'] .testimonials, html[data-theme='light'] .gallery {
     background: rgba(249, 250, 251, 0.92);
   }
   /* Dark mode */
-  html[data-theme='dark'] .rw-hero,
-  html[data-theme='dark'] .channels,
-  html[data-theme='dark'] .testimonials,
-  html[data-theme='dark'] .gallery {
+  html[data-theme='dark'] .rw-hero, html[data-theme='dark'] .channels, html[data-theme='dark'] .testimonials, html[data-theme='dark'] .gallery {
     background: rgba(15, 23, 42, 0.6);
   }
 
   /* 5) Soften the hero overlay on mobile (it was covering the bg layer) */
-  .rw-hero::before,
-  .hero-section::before,
-  .hero-shell::before {
+  .rw-hero::before, .hero-section::before, .hero-shell::before {
     background:
       radial-gradient(640px 320px at 18% 8%, rgba(233, 242, 255, 0.28) 0%, rgba(233, 242, 255, 0) 55%);
   }
-  html[data-theme='dark'] .rw-hero::before,
-  html[data-theme='dark'] .hero-section::before,
-  html[data-theme='dark'] .hero-shell::before {
+  html[data-theme='dark'] .rw-hero::before, html[data-theme='dark'] .hero-section::before, html[data-theme='dark'] .hero-shell::before {
     background:
       radial-gradient(560px 280px at 14% 6%, rgba(59, 130, 246, 0.06) 0%, rgba(15, 23, 42, 0) 55%);
   }
@@ -2412,12 +1946,7 @@ html[data-theme='dark'] .acad-chem-scribble {
 
 /* ---------- OPTIONAL: respect users who prefer reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .rw-bg-shape,
-  .rw-math-symbol,
-  .rw-chem-orbit,
-  .rw-phys-pulley,
-  .rw-chem-atom-cluster,
-  .rw-physics-wave {
+  .rw-bg-shape, .rw-math-symbol, .rw-chem-orbit, .rw-phys-pulley, .rw-chem-atom-cluster, .rw-physics-wave {
     animation: none !important;
     transform: none !important;
     opacity: 0.08;
@@ -2425,17 +1954,13 @@ html[data-theme='dark'] .acad-chem-scribble {
 }
 
 /* make these sections let the global animated background show through */
-.channels,
-.testimonials,
-.gallery {
+.testimonials, .gallery {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(130%);
 }
 
 /* dark mode: slightly more see-through, on slate */
-html[data-theme='dark'] .channels,
-html[data-theme='dark'] .testimonials,
-html[data-theme='dark'] .gallery {
+html[data-theme='dark'] .channels, html[data-theme='dark'] .testimonials, html[data-theme='dark'] .gallery {
   background: rgba(15, 23, 42, 0.55);
   backdrop-filter: saturate(140%);
 }
@@ -2443,17 +1968,14 @@ html[data-theme='dark'] .gallery {
 /* === MOBILE FIX: hero must be 1 column === */
 @media (max-width: 768px) {
   /* kill the desktop 2-col grid */
-  .rw-hero .container,
-  .rw-hero .hero-content {
+  .rw-hero .container, .rw-hero .hero-content {
     display: block !important;
     grid-template-columns: 1fr !important;
     width: 100% !important;
   }
 
   /* hero card itself: fit inside the screen */
-  .rw-hero .hero-card,
-  .rw-hero .panel,
-  .hero-section .hero-card {
+  .rw-hero .hero-card, .rw-hero .panel, .hero-section .hero-card {
     width: calc(100vw - 2rem) !important; /* 1rem left/right */
     max-width: calc(100vw - 2rem) !important;
     box-sizing: border-box;
@@ -2466,8 +1988,7 @@ html[data-theme='dark'] .gallery {
 /* === FINAL HERO MOBILE OVERRIDE (high specificity) === */
 @media (max-width: 768px) {
   /* 1. kill the forced 2-column grid */
-  body .rw-hero .container,
-  body .rw-hero .hero-content {
+  body .rw-hero .container, body .rw-hero .hero-content {
     display: block !important;
     grid-template-columns: none !important;
     width: 100% !important;
@@ -2477,10 +1998,7 @@ html[data-theme='dark'] .gallery {
   /* 2. stop parent from clipping */
 
   /* 3. make the hero card actually fit */
-  body .rw-hero .rw-hero-card,
-  body .rw-hero .hero-main-card,
-  body .rw-hero .hero-content-card,
-  body .hero-section .rw-hero-card {
+  body .rw-hero .rw-hero-card, body .rw-hero .hero-main-card, body .rw-hero .hero-content-card, body .hero-section .rw-hero-card {
     width: calc(100vw - 2rem) !important;   /* 1rem side gutters */
     max-width: calc(100vw - 2rem) !important;
     box-sizing: border-box;
@@ -2493,11 +2011,11 @@ html[data-theme='dark'] .gallery {
 /* ============================
    Courses Page
    ============================ */
-.courses-page{
+.courses-page {
   background: var(--bg-primary);
   color: var(--text-primary);
 }
-.courses-hero{
+.courses-hero {
   position: relative;
   overflow: hidden;
   padding: clamp(64px, 8vw, 120px) 0;
@@ -2507,34 +2025,34 @@ html[data-theme='dark'] .gallery {
     linear-gradient(135deg, #fff7ed, #fed7aa);
   color: #0f172a;
 }
-.courses-hero .container{
+.courses-hero .container {
   max-width: 1100px;
 }
-.courses-hero__grid{
+.courses-hero__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(32px, 6vw, 64px);
   align-items: center;
 }
-.courses-hero__content .eyebrow{
+.courses-hero__content .eyebrow {
   text-transform: uppercase;
   letter-spacing: .2em;
   font-size: .9rem;
   color: rgba(15,23,42,.6);
   margin-bottom: .65rem;
 }
-.courses-hero__content h1{
+.courses-hero__content h1 {
   margin: 0 0 1rem;
   font-size: clamp(2.4rem, 2rem + 1.8vw, 3.4rem);
   color: #0f172a;
 }
-.courses-hero__content .lead{
+.courses-hero__content .lead {
   max-width: 60ch;
   font-size: 1.12rem;
   color: rgba(15,23,42,.8);
   margin-bottom: 1.5rem;
 }
-.hero-benefits{
+.hero-benefits {
   list-style: none;
   padding: 0;
   margin: 0 0 1.75rem;
@@ -2542,14 +2060,14 @@ html[data-theme='dark'] .gallery {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: .75rem 1.25rem;
 }
-.hero-benefits li{
+.hero-benefits li {
   display: flex;
   gap: .75rem;
   align-items: center;
   font-weight: 600;
   color: #0f172a;
 }
-.hero-benefits__bullet{
+.hero-benefits__bullet {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -2557,40 +2075,40 @@ html[data-theme='dark'] .gallery {
   flex-shrink: 0;
   box-shadow: 0 0 12px rgba(249, 115, 22, .45);
 }
-.hero-cta-row{
+.hero-cta-row {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
-.hero-cta{
+.hero-cta {
   border-radius: 999px;
   padding: .8rem 1.8rem;
   font-weight: 600;
 }
-.courses-hero .hero-cta.btn--primary{
+.courses-hero .hero-cta.btn--primary {
   background: linear-gradient(135deg, #f97316, #facc15);
   color: #0f172a;
   border: none;
   box-shadow: 0 15px 40px rgba(249, 115, 22, .35);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.courses-hero .hero-cta.btn--primary:hover{
+.courses-hero .hero-cta.btn--primary:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 50px rgba(249, 115, 22, .45);
 }
-.hero-cta--ghost{
+.hero-cta--ghost {
   background: #0f172a;
   color: #f8fafc;
   border: 1px solid rgba(15,23,42,.8);
   box-shadow: 0 15px 30px rgba(15,23,42,.25);
 }
-.hero-cta--ghost:hover{
+.hero-cta--ghost:hover {
   background: #1e293b;
 }
-.courses-hero__spotlight{
+.courses-hero__spotlight {
   position: relative;
 }
-.dream-card{
+.dream-card {
   background: linear-gradient(160deg, rgba(255,255,255,.95), rgba(254,243,199,.9));
   border: 1px solid rgba(255, 180, 84, .35);
   border-radius: 26px;
@@ -2599,24 +2117,24 @@ html[data-theme='dark'] .gallery {
   backdrop-filter: blur(6px);
   color: #0f172a;
 }
-.dream-card__tag{
+.dream-card__tag {
   text-transform: uppercase;
   font-size: .8rem;
   letter-spacing: .25em;
   color: #d97706;
   margin-bottom: .5rem;
 }
-.dream-card h3{
+.dream-card h3 {
   margin: 0 0 .6rem;
   font-size: clamp(1.8rem, 1.2rem + 1.1vw, 2.4rem);
   color: #0f172a;
 }
-.dream-card p{
+.dream-card p {
   margin: 0 0 1rem;
   color: #1f2937;
   line-height: 1.6;
 }
-.dream-card__stats{
+.dream-card__stats {
   list-style: none;
   padding: 0;
   margin: 0 0 1rem;
@@ -2624,7 +2142,7 @@ html[data-theme='dark'] .gallery {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
 }
-.dream-card__stats li{
+.dream-card__stats li {
   background: rgba(255, 255, 255, .7);
   border-radius: 14px;
   padding: 14px;
@@ -2632,40 +2150,40 @@ html[data-theme='dark'] .gallery {
   flex-direction: column;
   gap: 4px;
 }
-.dream-card__stats strong{
+.dream-card__stats strong {
   font-size: 1.5rem;
   color: #0f172a;
 }
-.dream-card__stats span{
+.dream-card__stats span {
   font-size: .85rem;
   color: #7c2d12;
 }
-.dream-card__note{
+.dream-card__note {
   font-size: .9rem;
   color: #0f172a;
   font-weight: 600;
 }
 
 @media (max-width: 768px){
-  .hero-benefits{
+  .hero-benefits {
     grid-template-columns: 1fr;
   }
-  .hero-cta-row{
+  .hero-cta-row {
     flex-direction: column;
   }
-  .hero-cta{
+  .hero-cta {
     width: 100%;
     justify-content: center;
   }
 }
 
-.courses-grid{
+.courses-grid {
   display: grid;
   gap: 32px;
   padding: clamp(40px, 6vw, 72px) 0;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-.course-card{
+.course-card {
   border: 1px solid rgba(226, 232, 240, 0.6);
   border-radius: 28px;
   padding: clamp(28px, 3vw, 36px);
@@ -2680,11 +2198,11 @@ html[data-theme='dark'] .gallery {
   color: #0f172a;
   isolation: isolate;
 }
-.course-card > *:not(.course-card__halo){
+.course-card > *:not(.course-card__halo) {
   position: relative;
   z-index: 2;
 }
-.course-card__halo{
+.course-card__halo {
   position: absolute;
   inset: 18px;
   border-radius: 24px;
@@ -2694,7 +2212,7 @@ html[data-theme='dark'] .gallery {
   z-index: 1;
   pointer-events: none;
 }
-.course-card__accent{
+.course-card__accent {
   height: 6px;
   border-radius: 999px;
   width: 40%;
@@ -2702,45 +2220,45 @@ html[data-theme='dark'] .gallery {
   align-self: flex-start;
   box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
-.course-card:hover{
+.course-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 32px 70px rgba(15,23,42,.18);
 }
-.course-card__header{
+.course-card__header {
   display: flex;
   flex-direction: column;
   gap: .35rem;
 }
-.course-card__title-row{
+.course-card__title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
-.course-card__emoji{
+.course-card__emoji {
   font-size: 2rem;
   line-height: 1;
 }
-.course-card__header h2{
+.course-card__header h2 {
   margin: .25rem 0 .35rem;
   font-size: 1.75rem;
 }
-.course-tagline{
+.course-tagline {
   font-weight: 700;
   color: rgba(15,23,42,.65);
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: .85rem;
 }
-.course-audience{
+.course-audience {
   margin: 0;
   color: var(--text-muted);
 }
-.course-description{
+.course-description {
   margin: 0;
   line-height: 1.6;
 }
-.course-highlights{
+.course-highlights {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2748,11 +2266,11 @@ html[data-theme='dark'] .gallery {
   flex-direction: column;
   gap: .75rem;
 }
-.course-highlights li{
+.course-highlights li {
   padding-left: 0;
   line-height: 1.5;
 }
-.course-highlights strong{
+.course-highlights strong {
   display: block;
   font-size: .9rem;
   text-transform: uppercase;
@@ -2760,35 +2278,29 @@ html[data-theme='dark'] .gallery {
   color: rgba(15,23,42,.6);
 }
 
-html[data-theme='dark'] .course-card{
+html[data-theme='dark'] .course-card {
   color: #0f172a;
   border-color: rgba(15,23,42,.08);
   box-shadow: 0 28px 60px rgba(0,0,0,.45);
 }
-html[data-theme='dark'] .course-card__halo{
+html[data-theme='dark'] .course-card__halo {
   background: rgba(255,255,255,.65);
   filter: blur(22px);
   opacity: .85;
 }
-html[data-theme='dark'] .course-card__accent{
+html[data-theme='dark'] .course-card__accent {
   box-shadow: 0 10px 28px rgba(0,0,0,.25);
 }
-html[data-theme='dark'] .course-tagline,
-html[data-theme='dark'] .course-card__header h2,
-html[data-theme='dark'] .course-card__emoji,
-html[data-theme='dark'] .course-audience,
-html[data-theme='dark'] .course-description,
-html[data-theme='dark'] .course-highlights li,
-html[data-theme='dark'] .course-highlights strong{
+html[data-theme='dark'] .course-tagline, html[data-theme='dark'] .course-card__header h2, html[data-theme='dark'] .course-card__emoji, html[data-theme='dark'] .course-audience, html[data-theme='dark'] .course-description, html[data-theme='dark'] .course-highlights li, html[data-theme='dark'] .course-highlights strong {
   color: #0f172a;
 }
 
 @media (max-width: 640px){
-  .course-card{ padding: 24px; }
-  .course-highlights strong{ margin-bottom: .2rem; }
+  .course-card { padding: 24px; }
+  .course-highlights strong { margin-bottom: .2rem; }
 }
 
-.courses-cta{
+.courses-cta {
   padding: clamp(56px, 8vw, 96px) 0;
   background:
     radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 55%),
@@ -2797,7 +2309,7 @@ html[data-theme='dark'] .course-highlights strong{
   position: relative;
   overflow: hidden;
 }
-.courses-cta::after{
+.courses-cta::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -2805,14 +2317,14 @@ html[data-theme='dark'] .course-highlights strong{
   animation: sweep 10s linear infinite;
   opacity: .2;
 }
-.courses-cta .container{
+.courses-cta .container {
   display: flex;
   gap: clamp(24px, 5vw, 80px);
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.courses-cta h2{
+.courses-cta h2 {
   margin: .35rem 0 1rem;
   font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem);
 }

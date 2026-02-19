@@ -47,8 +47,7 @@
 /* ============================
    FORM LAYOUT & CONTROLS (scoped + specific)
    ============================ */
-.atm-modal .atm-form,
-.atm-modal form {
+.atm-modal .atm-form, .atm-modal form {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 18px 20px;
@@ -56,18 +55,16 @@
   box-sizing: border-box;
 }
 .atm-modal .col-12 { grid-column: span 12; }
-.atm-modal .col-9  { grid-column: span 9; }
-.atm-modal .col-3  { grid-column: span 3; }
+.atm-modal .col-9 { grid-column: span 9; }
+.atm-modal .col-3 { grid-column: span 3; }
 
 @media (max-width: 720px) {
-  .atm-modal .col-9,
-  .atm-modal .col-3 {
+  .atm-modal .col-9, .atm-modal .col-3 {
     grid-column: span 12;
   }
 }
 
-.atm-modal .atm-form label,
-.atm-modal form label {
+.atm-modal .atm-form label, .atm-modal form label {
   display: block;
   font-size: .86rem;
   font-weight: 600;
@@ -76,12 +73,7 @@
   letter-spacing: .2px;
 }
 
-.atm-modal .atm-form input,
-.atm-modal .atm-form select,
-.atm-modal .atm-form textarea,
-.atm-modal form input,
-.atm-modal form select,
-.atm-modal form textarea {
+.atm-modal .atm-form input, .atm-modal .atm-form select, .atm-modal .atm-form textarea, .atm-modal form input, .atm-modal form select, .atm-modal form textarea {
   width: 100%;
   display: block;
   box-sizing: border-box;
@@ -94,32 +86,18 @@
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
 }
-.atm-modal .atm-form textarea,
-.atm-modal form textarea { min-height: 110px; height: auto; resize: vertical; }
-.atm-modal .atm-form input::placeholder,
-.atm-modal .atm-form textarea::placeholder,
-.atm-modal form input::placeholder,
-.atm-modal form textarea::placeholder { color: rgba(234,241,248,.55); }
+.atm-modal .atm-form textarea, .atm-modal form textarea { min-height: 110px; height: auto; resize: vertical; }
+.atm-modal .atm-form input::placeholder, .atm-modal .atm-form textarea::placeholder, .atm-modal form input::placeholder, .atm-modal form textarea::placeholder { color: rgba(234,241,248,.55); }
 
-.atm-modal .atm-form input:focus,
-.atm-modal .atm-form select:focus,
-.atm-modal .atm-form textarea:focus,
-.atm-modal form input:focus,
-.atm-modal form select:focus,
-.atm-modal form textarea:focus {
+.atm-modal .atm-form input:focus, .atm-modal .atm-form select:focus, .atm-modal .atm-form textarea:focus, .atm-modal form input:focus, .atm-modal form select:focus, .atm-modal form textarea:focus {
   border-color: rgba(34,193,214,.9);
   box-shadow: 0 0 0 3px rgba(34,193,214,.22), inset 0 0 0 1px rgba(255,255,255,.06);
   background: rgba(255,255,255,.16);
 }
 
-.atm-modal .atm-form select,
-.atm-modal form select { appearance: none; background-clip: padding-box; }
-.atm-modal .atm-form input[type="number"],
-.atm-modal form input[type="number"] { -moz-appearance: textfield; }
-.atm-modal .atm-form input[type="number"]::-webkit-outer-spin-button,
-.atm-modal .atm-form input[type="number"]::-webkit-inner-spin-button,
-.atm-modal form input[type="number"]::-webkit-outer-spin-button,
-.atm-modal form input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.atm-modal .atm-form select, .atm-modal form select { appearance: none; background-clip: padding-box; }
+.atm-modal .atm-form input[type="number"], .atm-modal form input[type="number"] { -moz-appearance: textfield; }
+.atm-modal .atm-form input[type="number"]::-webkit-outer-spin-button, .atm-modal .atm-form input[type="number"]::-webkit-inner-spin-button, .atm-modal form input[type="number"]::-webkit-outer-spin-button, .atm-modal form input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .atm-actions {
   grid-column: 1 / -1;
@@ -174,12 +152,9 @@
 }
 
 /* Autofill color fix for inputs inside dark glass */
-.atm-modal input:-webkit-autofill,
-.atm-modal textarea:-webkit-autofill,
-.atm-modal select:-webkit-autofill {
+.atm-modal input:-webkit-autofill, .atm-modal textarea:-webkit-autofill, .atm-modal select:-webkit-autofill {
   -webkit-text-fill-color: #0b1220;
   -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,.92) inset;
   box-shadow: 0 0 0 1000px rgba(255,255,255,.92) inset;
 }
-
 

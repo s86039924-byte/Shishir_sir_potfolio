@@ -25,7 +25,7 @@ export default function Navigation() {
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
     document.documentElement.setAttribute('data-theme', newTheme)
-    ;(document.documentElement as HTMLElement).style.colorScheme = newTheme
+      ; (document.documentElement as HTMLElement).style.colorScheme = newTheme
   }
 
   const items = [
@@ -48,12 +48,17 @@ export default function Navigation() {
 
   useEffect(() => {
     const root = document.documentElement
-    root.style.setProperty('--nav-height', isDostRoute ? '0px' : '72px')
+    const height = isScrolled ? '80px' : '100px'
+    if (!isDostRoute) {
+      root.style.setProperty('--nav-height', height)
+    } else {
+      root.style.setProperty('--nav-height', '0px')
+    }
 
     return () => {
       root.style.removeProperty('--nav-height')
     }
-  }, [isDostRoute])
+  }, [isDostRoute, isScrolled])
 
   // close on route click
   const handleNavClick = () => setIsMobileMenuOpen(false)
@@ -62,7 +67,7 @@ export default function Navigation() {
 
   return (
     <header data-nav className={`site-nav ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-inner">
+      <div className="nav-inner">
         <div className="nav-brand">
           <Link href="/" aria-label="IIT Study Forum home" onClick={handleNavClick}>
             <Image

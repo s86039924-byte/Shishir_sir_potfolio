@@ -21,12 +21,12 @@ export default function ScrollManager() {
       if (!el) return;
       const href = el.getAttribute('href') || '';
       if (!href.includes('#')) return;
-      
+
       e.preventDefault();
       const id = href.split('#')[1];
       if (!id) return;
 
-      const NAV_H = 72;
+      const NAV_H = 100;
       // If we are NOT on the homepage, navigate there first with the hash
       if (pathname !== '/') {
         router.push(`/#${id}`);
@@ -49,7 +49,7 @@ export default function ScrollManager() {
     if (!hash) return;
     const id = hash.slice(1);
     const target = document.getElementById(id);
-    const NAV_H = 72;
+    const NAV_H = 100;
     if (target) {
       const y = target.getBoundingClientRect().top + window.scrollY - NAV_H;
       window.scrollTo({ top: y, behavior: 'smooth' });

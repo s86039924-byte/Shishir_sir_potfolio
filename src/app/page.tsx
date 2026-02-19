@@ -15,7 +15,6 @@ export default function HomePage() {
       <FoundersSection />
       <TestimonialsSection />
       <GallerySection />
-      <Footer />
     </>
   )
 }

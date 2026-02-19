@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from './components/layout/Navigation'
+import Footer from './components/layout/Footer'
 import ScrollProgress from './components/animations/ScrollProgress'
 import ParticlesBackground from './components/animations/ParticlesBackground'
 import ScrollManager from './components/layout/ScrollManager'
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="page-grid-overlay" aria-hidden="true" />
         <Navigation />
         <main className="page">{children}</main>  {/* accounts for fixed nav height */}
+        <Footer />
       </body>
     </html>
   )
