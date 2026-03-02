@@ -99,6 +99,10 @@ const SuccessStoriesPage: React.FC = () => {
     () => (showAllHall ? hallResults : hallResults.slice(0, 6)),
     [showAllHall]
   );
+  const scrollToHallOfFame = () => {
+    const el = document.getElementById("ssHallOfFame");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div className="ssPage">
@@ -136,7 +140,7 @@ const SuccessStoriesPage: React.FC = () => {
               </p>
 
               <div className="ssHeroBtns">
-                <button className="ssBtn ssBtnPrimaryBig" type="button">
+                <button className="ssBtn ssBtnPrimaryBig" type="button" onClick={scrollToHallOfFame}>
                   View Top Rankers
                 </button>
                 <button className="ssBtn ssBtnGlassBig" type="button">
@@ -172,7 +176,7 @@ const SuccessStoriesPage: React.FC = () => {
         </section>
 
         {/* Hall of Fame */}
-        <section className="ssSection">
+        <section className="ssSection" id="ssHallOfFame">
           <div className="ssContainer">
             <div className="ssSectionHead">
               <h2 className="ssSectionTitle">Hall of Fame</h2>
@@ -192,8 +196,9 @@ const SuccessStoriesPage: React.FC = () => {
                   <div className="ssResultBody">
                     <h3 className="ssResultName">{result.name}</h3>
                     <p className="ssResultMetric">
-                      <span>{result.label}</span>
-                      <strong>{result.value}</strong>
+                      {result.label === "Percentile"
+                        ? `${result.value}%tile`
+                        : `AIR ${result.value}`}
                     </p>
                   </div>
                 </article>

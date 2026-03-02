@@ -12,6 +12,23 @@
   width: min(1180px, 100%);
   margin: 0 auto;
   padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.wuCornerLogo {
+  position: fixed;
+  top: 96px;
+  left: 8px;
+  width: min(28vw, 450px);
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .wuEyebrow {
@@ -101,7 +118,7 @@
 .wuStepMeta p {
   margin: 5px 0 0;
   color: #5b6472;
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   line-height: 1.5;
   font-weight: 600;
 }
@@ -132,7 +149,7 @@
 .wuDetailCard li {
   color: #1e2a38;
   line-height: 1.55;
-  font-size: 0.95rem;
+  font-size: 1.02rem;
 }
 
 .wuConnector {
@@ -189,6 +206,10 @@
 }
 
 @media (max-width: 640px) {
+  .wuCornerLogo {
+    display: none;
+  }
+
   .wuSection {
     padding: 34px 0 44px;
   }

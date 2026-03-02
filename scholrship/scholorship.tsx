@@ -28,8 +28,8 @@ const ScholarshipExamPage: React.FC = () => {
             </h1>
 
             <p className="schHeroSub">
-              Benchmark your preparation against the best minds in the country. Get up to{" "}
-              <span className="schHeroHighlight">100% Scholarship</span> for IIT-JEE Prep and cash
+              Benchmark your preparation against the best minds in the country. Get up to{" 40% scholtarship"}
+              <span className="schHeroHighlight"></span> for IIT-JEE Prep and cash
               rewards worth ₹50 Lakhs.
             </p>
 
@@ -58,6 +58,10 @@ const ScholarshipExamPage: React.FC = () => {
                 Download Syllabus
               </button>
             </div>
+          </div>
+
+          <div className="schHeroRight" aria-hidden="true">
+            <img className="schHeroCheer" src="/logo/cheer.png" alt="" />
           </div>
         </div>
       </section>

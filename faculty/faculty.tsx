@@ -82,12 +82,6 @@ const FacultyPage: React.FC = () => {
             <div className="featuredCard">
               <div className="featuredGrid">
                 <div className="featuredContent">
-                  <div className="featuredMeta">
-                    <span className="featuredTag">IIT Delhi Alumnus</span>
-                    <span className="featuredExp">• 20+ Years Exp</span>
-                  </div>
-
-                  <h2 className="featuredName">Shishir Mohta</h2>
                   <h3 className="featuredDeskTitle">From the Desk of Director</h3>
                   <p className="featuredDeskSub">Meeting your Expectations</p>
 
@@ -111,31 +105,42 @@ const FacultyPage: React.FC = () => {
                     to uncover opportunities that will lead to successful resolution."
                   </p>
 
-                  <div className="featuredStats">
-                    <div className="statBox statBoxBlue">
-                      <p className="statValue statValueBlue">2000+</p>
-                      <p className="statLabel">Students Mentored</p>
-                    </div>
-
-                    <div className="statBox statBoxRed">
-                      <p className="statValue statValueRed">AIR 12</p>
-                      <p className="statLabel">Best Rank Produced</p>
-                    </div>
-                  </div>
-
-                  <button className="facBtn facBtnPrimary facBtnLarge">
-                    <span>Watch Introductory Session</span>
-                    <span className="material-symbols-outlined">play_circle</span>
-                  </button>
                 </div>
 
-                <div className="featuredImageWrap">
-                  <img
-                    className="featuredImage"
-                    alt="Professional headshot of Shishir Mohta, Founder of IIT Study Forum"
-                    src="/faculty/director.png"
-                  />
-                  <div className="featuredLabel">Founder &amp; HOD Physics</div>
+                <div className="featuredImageCol">
+                  <div className="featuredImageWrap">
+                    <img
+                      className="featuredImage"
+                      alt="Professional headshot of Shishir Mohta, Founder of IIT Study Forum"
+                      src="/faculty/director.png"
+                    />
+                    <div className="featuredLabel">Founder &amp; HOD Physics</div>
+                  </div>
+
+                  <div className="featuredImageInfo">
+                    <div className="featuredMeta">
+                      <span className="featuredTag">IIT Delhi Alumnus</span>
+                      <span className="featuredExp">• 20+ Years Exp</span>
+                    </div>
+                    <h2 className="featuredName">Shishir Mohta</h2>
+
+                    <div className="featuredStats">
+                      <div className="statBox statBoxBlue">
+                        <p className="statValue statValueBlue">2000+</p>
+                        <p className="statLabel">Students Mentored</p>
+                      </div>
+
+                      <div className="statBox statBoxRed">
+                        <p className="statValue statValueRed">AIR 12</p>
+                        <p className="statLabel">Best Rank Produced</p>
+                      </div>
+                    </div>
+
+                    <button className="facBtn facBtnPrimary facBtnLarge featuredIntroBtn">
+                      <span>Watch Introductory Session</span>
+                      <span className="material-symbols-outlined">play_circle</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

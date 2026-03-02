@@ -83,6 +83,27 @@
   background: rgba(255, 255, 255, 0.18);
 }
 
+.homePage .heroActions .btnAccent {
+  background: #F5EED8;
+  border-color: #E4C87B;
+  color: #1E2A38;
+  box-shadow: 0 12px 26px rgba(30, 42, 56, 0.24);
+}
+
+.homePage .heroActions .btnAccent:hover {
+  background: #E4C87B;
+  color: #1E2A38;
+}
+
+.homePage .heroActions .btnGhost {
+  background: rgba(30, 42, 56, 0.36);
+  border-color: rgba(228, 200, 123, 0.62);
+}
+
+.homePage .heroActions .btnGhost:hover {
+  background: rgba(30, 42, 56, 0.52);
+}
+
 .homePage .btnLarge {
   height: 48px;
   padding: 0 22px;
@@ -449,13 +470,15 @@
 
 .homePage .rankYear {
   position: absolute;
-  right: -8px;
-  bottom: -8px;
+  right: 6px;
+  bottom: 6px;
   background: var(--accent);
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
-  padding: 3px 8px;
+  padding: 3px 7px;
+  line-height: 1;
+  white-space: nowrap;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(2, 6, 23, 0.2);
 }
@@ -464,7 +487,7 @@
   display: inline-block;
   color: var(--accent);
   font-weight: 900;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -480,7 +503,7 @@
 .homePage .rankSub {
   margin: 6px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -555,14 +578,14 @@
 
 .homePage .featureTitle {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 900;
   color: var(--primary);
 }
 
 .homePage .featureText {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--muted);
 }
@@ -643,7 +666,7 @@
   left: 14px;
   background: var(--accent);
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
   padding: 6px 12px;
   border-radius: 999px;
@@ -655,7 +678,7 @@
 
 .homePage .courseTitle {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
   color: var(--accent);
 }
@@ -663,7 +686,7 @@
 .homePage .courseText {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
 
   /* line-clamp 2 */
@@ -684,7 +707,7 @@
 }
 
 .homePage .metaItem {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   display: inline-flex;
   align-items: center;
@@ -767,11 +790,27 @@
 }
 
 .homePage .cta .btnWhite {
+  background: #E4C87B;
+  color: #1E2A38;
   border-color: #1E2A38;
+  min-width: 210px;
+  height: 48px;
+  padding: 0 20px;
 }
 
 .homePage .cta .btnOutlineWhite {
+  background: #F5EED8;
+  color: #1E2A38;
   border-color: rgba(30, 42, 56, 0.9);
+  min-width: 210px;
+  height: 48px;
+  padding: 0 20px;
+}
+
+.homePage .cta .btnWhite:hover,
+.homePage .cta .btnOutlineWhite:hover {
+  background: #C49A2C;
+  color: #1E2A38;
 }
 
 .homePage .ctaActions {
@@ -817,7 +856,7 @@
 .homePage .quoteText {
   margin: 0 0 18px;
   color: rgba(15, 23, 42, 0.86);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.75;
   flex: 1;
 }
@@ -844,14 +883,14 @@
 
 .homePage .quoteName {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   color: var(--primary);
 }
 
 .homePage .quoteMeta {
   margin: 2px 0 0;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 
@@ -891,6 +930,14 @@
   }
   .homePage .ctaActions {
     flex-direction: row;
+  }
+}
+
+@media (max-width: 639px) {
+  .homePage .cta .btnWhite,
+  .homePage .cta .btnOutlineWhite {
+    width: 100%;
+    max-width: 260px;
   }
 }
 

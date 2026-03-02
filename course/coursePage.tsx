@@ -15,7 +15,7 @@ const CoursesPage: React.FC = () => {
 
             <h1 className="heroTitle">
               Expertly Crafted Programs for{" "}
-              <span className="heroTitleHighlight">IIT-JEE Success</span>
+              <span className="heroTitleHighlight">Academic Excellence</span>
             </h1>
 
             <p className="heroText">
@@ -27,6 +27,10 @@ const CoursesPage: React.FC = () => {
               <button className="btn btnSecondary btnHero">Download Brochure</button>
               <button className="btn btnGhost btnHero">Scholarship Test</button>
             </div>
+          </div>
+
+          <div className="heroRightVisual" aria-hidden="true">
+            <img className="heroRightImage" src="/logo/courses_.png" alt="" />
           </div>
         </section>
 

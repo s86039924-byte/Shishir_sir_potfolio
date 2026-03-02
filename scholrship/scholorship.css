@@ -45,7 +45,7 @@
   cursor:pointer;
   border-radius:var(--r10);
   font-weight:900;
-  font-size:13px;
+  font-size:14px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -71,6 +71,30 @@
 }
 .schBtnOutline:hover{ background:#F8F9FA; }
 .schPage.dark .schBtnOutline:hover{ background:#273449; }
+
+.schHeroButtons .schBtnPrimary{
+  background:#1E2A38;
+  border-color:#E4C87B;
+  color:#F7F8FA;
+  box-shadow:0 10px 22px rgba(30,42,56,.22);
+}
+
+.schHeroButtons .schBtnPrimary:hover{
+  background:#263648;
+  color:#F7F8FA;
+}
+
+.schHeroButtons .schBtnOutline{
+  background:#F5EED8;
+  border-color:#E4C87B;
+  color:#1E2A38;
+}
+
+.schHeroButtons .schBtnOutline:hover{
+  background:#E4C87B;
+  border-color:#E4C87B;
+  color:#1E2A38;
+}
 
 .schBtnDanger{
   width:100%;
@@ -125,7 +149,7 @@
 .schPage.dark .schPill{ background:rgba(168,132,31,.18); color:#E6D8A8; }
 .schPillIcon{ font-size:16px; }
 .schPillText{
-  font-size:11px;
+  font-size:12px;
   font-weight:950;
   letter-spacing:.10em;
   text-transform:uppercase;
@@ -165,7 +189,7 @@
   display:flex;
   align-items:center;
   gap:8px;
-  font-size:13px;
+  font-size:14px;
   font-weight:700;
   color:rgba(255,255,255,.92);
 }
@@ -178,6 +202,20 @@
   flex-direction:column;
   gap:12px;
   align-items:center;
+}
+
+.schHeroRight{
+  display:flex;
+  justify-content:center;
+  order:-1;
+  margin-bottom:6px;
+}
+
+.schHeroCheer{
+  width:min(100%, 220px);
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 16px 30px rgba(2,6,23,.24));
 }
 
 /* Form Card */
@@ -198,7 +236,7 @@
 }
 .schCardNote{
   margin:6px 0 0;
-  font-size:12px;
+  font-size:13px;
   color:rgba(100,116,139,.95);
   font-weight:600;
 }
@@ -212,7 +250,7 @@
 
 .schField{ display:flex; flex-direction:column; gap:6px; }
 .schLabel{
-  font-size:13px;
+  font-size:14px;
   font-weight:800;
   color:rgba(51,65,85,.95);
 }
@@ -238,6 +276,7 @@
   outline:none;
   color:var(--text);
   font-weight:700;
+  font-size:14px;
 }
 .schPage.dark .schInput{
   background:rgba(15,23,42,.40);
@@ -266,6 +305,7 @@
   cursor:pointer;
   font-weight:800;
   color:var(--text);
+  font-size:14px;
 }
 .schPage.dark .schSelect{
   background:rgba(15,23,42,.40);
@@ -299,6 +339,7 @@
   cursor:pointer;
   font-weight:800;
   color:var(--text);
+  font-size:14px;
 }
 .schPage.dark .schSelect2{
   background:rgba(15,23,42,.40);
@@ -343,6 +384,7 @@
   outline:none;
   font-weight:800;
   color:var(--text);
+  font-size:14px;
 }
 .schPage.dark .schPhoneInput{
   background:rgba(15,23,42,.40);
@@ -395,7 +437,7 @@
 }
 .schRadio input:checked + .schRadioDot::after{ opacity:1; }
 .schRadioText{
-  font-size:13px;
+  font-size:14px;
   font-weight:700;
   color:rgba(100,116,139,.95);
 }
@@ -404,7 +446,7 @@
 
 .schTerms{
   margin:0;
-  font-size:11px;
+  font-size:12px;
   text-align:center;
   color:rgba(148,163,184,.95);
   font-weight:600;
@@ -439,7 +481,7 @@
 .schAccent{ color:var(--accent); }
 .schStatLabel{
   margin:0;
-  font-size:12px;
+  font-size:13px;
   color:rgba(100,116,139,.95);
   font-weight:700;
 }
@@ -481,19 +523,19 @@
 }
 .schPolicyTitle{
   margin:0;
-  font-size:18px;
+  font-size:20px;
   font-weight:900;
   color:var(--accent);
 }
 .schPolicyMini{
   margin:0 0 4px;
-  font-size:14px;
+  font-size:15px;
   font-weight:900;
   color:var(--accent);
 }
 .schPolicyText{
   margin:0;
-  font-size:14px;
+  font-size:15px;
   line-height:1.75;
   color:#4B5563;
   font-weight:600;
@@ -505,7 +547,7 @@
   flex-direction:column;
   gap:8px;
   color:#4B5563;
-  font-size:14px;
+  font-size:15px;
   line-height:1.75;
   font-weight:600;
 }
@@ -529,7 +571,7 @@
   text-align:left;
   background:#FDEBED;
   color:#8E0E1F;
-  font-size:12px;
+  font-size:13px;
   font-weight:900;
   letter-spacing:.06em;
   text-transform:uppercase;
@@ -540,7 +582,7 @@
   padding:10px 12px;
   border-bottom:1px solid rgba(226,232,240,.95);
   color:#4B5563;
-  font-size:13px;
+  font-size:14px;
   line-height:1.6;
   font-weight:600;
 }
@@ -572,7 +614,7 @@
   position:absolute;
   right:0;
   top:0;
-  font-size:11px;
+  font-size:12px;
   font-weight:950;
   padding:6px 10px;
   border-bottom-left-radius:10px;
@@ -597,7 +639,7 @@
 
 .schBracketTitle{
   margin:0 0 6px;
-  font-size:18px;
+  font-size:20px;
   font-weight:950;
 }
 .schBracketOff{
@@ -608,14 +650,14 @@
 }
 .schPage.dark .schBracketOff{ color:#fb7185; }
 .schOffSmall{
-  font-size:14px;
+  font-size:15px;
   font-weight:800;
   color:rgba(100,116,139,.9);
 }
 .schPage.dark .schOffSmall{ color:rgba(148,163,184,.95); }
 .schBracketNote{
   margin:0 0 14px;
-  font-size:12px;
+  font-size:13px;
   color:rgba(100,116,139,.95);
   font-weight:700;
 }
@@ -632,7 +674,7 @@
   align-items:center;
   justify-content:center;
   gap:8px;
-  font-size:13px;
+  font-size:14px;
   font-weight:800;
   color:rgba(51,65,85,.95);
 }
@@ -642,7 +684,7 @@
 .schFootNote{
   margin:14px 0 0;
   text-align:center;
-  font-size:12px;
+  font-size:13px;
   color:rgba(100,116,139,.95);
   font-style:italic;
   font-weight:600;
@@ -717,19 +759,19 @@
 .schStepText{ padding-top:2px; }
 .schStepDate{
   margin:0 0 6px;
-  font-size:14px;
+  font-size:15px;
   font-weight:900;
   color:rgba(51,65,85,.95);
 }
 .schPage.dark .schStepDate{ color:rgba(203,213,225,.95); }
 .schStepTitle{
   margin:0 0 6px;
-  font-size:16px;
+  font-size:17px;
   font-weight:950;
 }
 .schStepDesc{
   margin:0;
-  font-size:12px;
+  font-size:13px;
   color:rgba(100,116,139,.95);
   font-weight:600;
   line-height:1.6;
@@ -763,7 +805,7 @@
 .schFameQuote{
   margin:0;
   color:var(--muted);
-  font-size:13px;
+  font-size:14px;
   line-height:1.7;
   font-weight:600;
 }
@@ -804,7 +846,7 @@
 .schFaqA{
   padding:0 14px 14px;
   color:var(--muted);
-  font-size:13px;
+  font-size:14px;
   line-height:1.7;
   font-weight:600;
 }
@@ -820,16 +862,24 @@
 @media (min-width: 1024px){
   .schHero{ padding:56px 0 72px; }
   .schHeroGrid{
-    grid-template-columns:1fr;
-    max-width:980px;
+    grid-template-columns:1.15fr .85fr;
+    max-width:1180px;
     margin:0 auto;
     gap:28px;
+    align-items:center;
   }
-  .schHeroLeft{ text-align:center; }
-  .schPill{ margin:0 auto; }
-  .schHeroSub{ margin:0 auto; }
-  .schPoints{ justify-content:center; }
-  .schHeroButtons{ justify-content:center; }
+  .schHeroLeft{ text-align:left; }
+  .schPill{ margin:0; }
+  .schHeroSub{ margin:0; }
+  .schPoints{ justify-content:flex-start; }
+  .schHeroButtons{ justify-content:flex-start; align-items:flex-start; }
+  .schHeroRight{
+    display:flex;
+    order:0;
+    justify-content:flex-end;
+    margin-bottom:0;
+  }
+  .schHeroCheer{ width:min(100%, 420px); }
 
   .schBracketGrid{ grid-template-columns:repeat(3, 1fr); gap:18px; }
 

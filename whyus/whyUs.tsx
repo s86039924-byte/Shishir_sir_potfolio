@@ -66,19 +66,24 @@ const workflowSteps: WorkflowStep[] = [
 ];
 
 const WhyUsPage: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState<number | null>(0);
 
   return (
     <div className="whyUsPage">
       <section className="wuSection">
         <div className="wuContainer">
+          <img
+            className="wuCornerLogo"
+            src="/logo/why_us.png"
+            alt="Why Us section logo"
+          />
           <p className="wuEyebrow">Core Strengths Workflow</p>
           <h1 className="wuTitle">Steps to Academic Excellence</h1>
 
           <div className="wuStepper" role="list" aria-label="Core strengths workflow">
             {workflowSteps.map((step, index) => {
               const isActive = index === activeStep;
-              const isCompleted = index < activeStep;
+              const isCompleted = activeStep !== null && index < activeStep;
 
               return (
                 <article className="wuStep" role="listitem" key={step.label}>
@@ -86,8 +91,9 @@ const WhyUsPage: React.FC = () => {
                     <button
                       type="button"
                       className={`wuStepIcon ${isActive ? "isActive" : ""} ${isCompleted ? "isCompleted" : ""}`}
-                      onClick={() => setActiveStep(index)}
+                      onClick={() => setActiveStep((prev) => (prev === index ? null : index))}
                       aria-label={`Open details for ${step.label}`}
+                      aria-expanded={isActive}
                     >
                       <span className="material-symbols-outlined" aria-hidden="true">
                         {step.icon}

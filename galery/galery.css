@@ -176,7 +176,7 @@
   display:inline-block;
   padding:4px 8px;
   border-radius:6px;
-  font-size:11px;
+  font-size:12px;
   font-weight:950;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -187,14 +187,14 @@
 .galBigTitle{
   margin:0 0 8px;
   color:#fff;
-  font-size:20px;
+  font-size:22px;
   font-weight:950;
   line-height:1.2;
 }
 .galBigText{
   margin:0;
   color:#F7F0D9;
-  font-size:13px;
+  font-size:14px;
   font-weight:600;
   line-height:1.6;
   display:-webkit-box;
@@ -227,13 +227,13 @@
 .galHoverTitle{
   margin:0;
   color:#fff;
-  font-size:13px;
+  font-size:14px;
   font-weight:950;
 }
 .galHoverSub{
   margin:6px 0 0;
   color:#F7F0D9;
-  font-size:12px;
+  font-size:13px;
   font-weight:600;
 }
 
@@ -306,7 +306,7 @@
   z-index:3;
   background:rgba(0,0,0,.70);
   color:#fff;
-  font-size:12px;
+  font-size:13px;
   font-weight:900;
   padding:4px 8px;
   border-radius:6px;
@@ -319,7 +319,7 @@
   z-index:3;
   background:rgba(201,162,39,.90);
   color:#fff;
-  font-size:12px;
+  font-size:13px;
   font-weight:900;
   padding:4px 8px;
   border-radius:6px;
@@ -337,13 +337,13 @@
 .galWideTitle{
   margin:0;
   color:#fff;
-  font-size:18px;
+  font-size:20px;
   font-weight:950;
 }
 .galWideSub{
   margin:6px 0 0;
   color:#F7F0D9;
-  font-size:13px;
+  font-size:14px;
   font-weight:600;
 }
 
@@ -377,13 +377,13 @@
 .galSmallTitle{
   margin:0;
   color:#fff;
-  font-size:13px;
+  font-size:14px;
   font-weight:950;
 }
 .galSmallSub{
   margin:6px 0 0;
   color:#F7F0D9;
-  font-size:12px;
+  font-size:13px;
   font-weight:600;
 }
 
