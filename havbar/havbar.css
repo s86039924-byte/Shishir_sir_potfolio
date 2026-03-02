@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  background: #1f2933;
-  border-bottom: 1px solid #e6d8a8;
+  background: #1E2A38;
+  border-bottom: 1px solid #E4C87B;
   margin: 0;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .shellBrand {
-  color: #f8f9fa;
+  color: #F7F8FA;
   text-decoration: none;
   font-weight: 700;
   display: inline-flex;
@@ -49,7 +49,7 @@
 .shellBrandText {
   font-size: 1.2rem;
   line-height: 1;
-  color: #f7f0d9;
+  color: #F5EED8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,7 +65,7 @@
 }
 
 .shellLink {
-  color: #f7f0d9;
+  color: #F5EED8;
   text-decoration: none;
   font-size: 0.95rem;
   padding: 6px 10px;
@@ -74,9 +74,9 @@
 }
 
 .shellLinkDost {
-  background: #8e0e1f;
-  border-color: #e6d8a8;
-  color: #f7f0d9;
+  background: #8C1624;
+  border-color: #E4C87B;
+  color: #F5EED8;
   font-weight: 700;
   min-width: 74px;
   min-height: 38px;
@@ -84,20 +84,20 @@
 }
 
 .shellLinkDost:hover {
-  background: #b11226;
+  background: #A61B2B;
 }
 
 .shellLinkActive {
-  color: #111827;
-  background: #f7f0d9;
-  border-color: #e6d8a8;
+  color: #1F2937;
+  background: #F5EED8;
+  border-color: #E4C87B;
   font-weight: 700;
 }
 
 .shellLinkDost.shellLinkActive {
-  color: #f7f0d9;
-  background: #b11226;
-  border-color: #e6d8a8;
+  color: #F5EED8;
+  background: #A61B2B;
+  border-color: #E4C87B;
 }
 
 .shellMenuBtn {
@@ -105,7 +105,7 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  border: 1px solid rgba(230, 216, 168, 0.5);
+  border: 1px solid rgba(228, 200, 123, 0.5);
   background: transparent;
   cursor: pointer;
   align-items: center;
@@ -118,7 +118,7 @@
 .shellMenuBtn span {
   width: 18px;
   height: 2px;
-  background: #f7f0d9;
+  background: #F5EED8;
   border-radius: 4px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -126,9 +126,9 @@
 .shellDostQuick {
   display: none;
   text-decoration: none;
-  background: #8e0e1f;
-  border: 1px solid #e6d8a8;
-  color: #f7f0d9;
+  background: #8C1624;
+  border: 1px solid #E4C87B;
+  color: #F5EED8;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 700;
@@ -203,8 +203,8 @@
     right: 0;
     height: 100vh;
     width: min(78vw, 300px);
-    background: #1f2933;
-    border-left: 1px solid rgba(230, 216, 168, 0.4);
+    background: #1E2A38;
+    border-left: 1px solid rgba(228, 200, 123, 0.4);
     transform: translateX(100%);
     transition: transform 0.25s ease;
     z-index: 999;
@@ -219,17 +219,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #f7f0d9;
+    color: #F5EED8;
     font-weight: 700;
     margin-bottom: 12px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(230, 216, 168, 0.3);
+    border-bottom: 1px solid rgba(228, 200, 123, 0.3);
   }
 
   .shellDrawerClose {
     border: none;
     background: transparent;
-    color: #f7f0d9;
+    color: #F5EED8;
     font-size: 1.2rem;
     cursor: pointer;
   }
@@ -241,7 +241,7 @@
   }
 
   .shellDrawerLink {
-    color: #f7f0d9;
+    color: #F5EED8;
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 8px;
@@ -250,23 +250,23 @@
   }
 
   .shellDrawerLinkActive {
-    color: #111827;
-    background: #f7f0d9;
-    border-color: #e6d8a8;
+    color: #1F2937;
+    background: #F5EED8;
+    border-color: #E4C87B;
   }
 
   .shellDrawerLinkDost {
-    background: #8e0e1f;
-    border-color: #e6d8a8;
-    color: #f7f0d9;
+    background: #8C1624;
+    border-color: #E4C87B;
+    color: #F5EED8;
     font-weight: 700;
     min-height: 44px;
     padding: 12px 14px;
   }
 
   .shellDrawerLinkDost.shellDrawerLinkActive {
-    color: #f7f0d9;
-    background: #b11226;
+    color: #F5EED8;
+    background: #A61B2B;
   }
 
   .shellBrandLogo {

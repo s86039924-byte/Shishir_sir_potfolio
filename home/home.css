@@ -1,17 +1,19 @@
 /* ===== Base ===== */
 .homePage {
-  --primary: #C9A227;
-  --primary-dark: #A8841F;
-  --accent: #B11226;
-  --accent-hover: #8E0E1F;
+  --primary: #C49A2C;
+  --primary-dark: #A88324;
+  --accent: #A61B2B;
+  --accent-hover: #8C1624;
 
   --bg: #ffffff;
-  --surface: #F8F9FA;
+  --surface: #F7F8FA;
 
-  --text: #1F2933;
-  --muted: #4B5563;
+  --text: #1E2A38;
+  --muted: #5B6472;
 
-  --border: #E5E7EB;
+  --border: #DDE2E7;
+  --border-dark: #1E2A38;
+  --card-border-dark: rgba(30, 42, 56, 0.28);
   --shadow: 0 20px 60px rgba(2, 6, 23, 0.18);
 
   --radius-lg: 12px;
@@ -63,7 +65,7 @@
   background: var(--accent);
   border: 1px solid var(--primary);
   color: #fff;
-  box-shadow: 0 12px 26px rgba(220, 38, 38, 0.28);
+  box-shadow: 0 12px 26px rgba(166, 27, 43, 0.28);
 }
 
 .homePage .btnAccent:hover {
@@ -73,12 +75,12 @@
 .homePage .btnGhost {
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   backdrop-filter: blur(12px);
 }
 
 .homePage .btnGhost:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .homePage .btnLarge {
@@ -89,13 +91,15 @@
 
 .homePage .btnWhite {
   background: #fff;
-  color: var(--primary);
+  color: var(--accent);
   padding: 12px 18px;
+  border: 1px solid #E4C87B;
   border-radius: 10px;
   box-shadow: 0 12px 26px rgba(2, 6, 23, 0.18);
 }
 
 .homePage .btnWhite:hover {
+  background: #F8E9EC;
   color: var(--accent);
 }
 
@@ -172,8 +176,8 @@
   background: linear-gradient(
     90deg,
     var(--accent) 0%,
-    rgba(142, 14, 31, 0.88) 55%,
-    rgba(142, 14, 31, 0.12) 100%
+    rgba(140, 22, 36, 0.88) 55%,
+    rgba(140, 22, 36, 0.12) 100%
   );
 }
 
@@ -213,7 +217,7 @@
   font-size: 3rem;
   line-height: 1;
   font-weight: 900;
-  color: #111827;
+  color: #1F2937;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
@@ -285,7 +289,7 @@
 
 .homePage .heroTitle {
   margin: 0;
-  color: #f7f0d9;
+  color: #F5EED8;
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -293,7 +297,7 @@
 }
 
 .homePage .heroTitleHighlight {
-  color: #E6D8A8;
+  color: #E4C87B;
   background: #fff;
   padding: 2px 10px;
   border-radius: 10px;
@@ -304,7 +308,7 @@
 
 .homePage .heroDesc {
   margin: 0;
-  color: rgba(247, 240, 217, 0.95);
+  color: rgba(245, 238, 216, 0.95);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.7;
@@ -329,7 +333,7 @@
 
 .homePage .statValue {
   margin: 0;
-  color: #f7f0d9;
+  color: #F5EED8;
   font-size: 28px;
   font-weight: 900;
 }
@@ -337,13 +341,13 @@
 .homePage .statLabel {
   margin: 0;
   font-size: 13px;
-  color: rgba(230, 216, 168, 0.95);
+  color: rgba(228, 200, 123, 0.95);
 }
 
 .homePage .statDivider {
   width: 1px;
   height: 40px;
-  background: rgba(230, 216, 168, 0.4);
+  background: rgba(228, 200, 123, 0.4);
 }
 
 /* ===== Grid helpers ===== */
@@ -405,7 +409,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(220, 38, 38, 0.1);
+  background: rgba(166, 27, 43, 0.1);
   color: var(--accent);
 }
 
@@ -416,7 +420,7 @@
   padding: 18px;
   border-radius: 14px;
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-border-dark);
   box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
   transition: box-shadow 0.2s ease;
   margin-top: 14px;
@@ -519,7 +523,7 @@
   padding: 22px;
   border-radius: 14px;
   background: var(--surface);
-  border: 1px solid #F8F9FA;
+  border: 1px solid var(--card-border-dark);
   transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -605,7 +609,7 @@
 
 .homePage .courseCard {
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-border-dark);
   border-radius: var(--radius-2xl);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -672,7 +676,7 @@
 .homePage .courseMeta {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid #F8F9FA;
+  border-top: 1px solid #F7F8FA;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -703,6 +707,7 @@
   position: relative;
   border-radius: var(--radius-2xl);
   background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border: 1px solid var(--border-dark);
   overflow: hidden;
   padding: 28px;
   display: flex;
@@ -755,10 +760,18 @@
 
 .homePage .ctaHighlight {
   font-weight: 900;
-  color: #fff;
-  background: var(--accent);
+  color: #1E2A38;
+  background: #F5EED8;
   padding: 2px 8px;
   border-radius: 6px;
+}
+
+.homePage .cta .btnWhite {
+  border-color: #1E2A38;
+}
+
+.homePage .cta .btnOutlineWhite {
+  border-color: rgba(30, 42, 56, 0.9);
 }
 
 .homePage .ctaActions {
@@ -784,7 +797,7 @@
 .homePage .quoteCard {
   padding: 22px;
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-border-dark);
   border-radius: 14px;
   box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
   display: flex;
@@ -820,7 +833,7 @@
   height: 40px;
   border-radius: 999px;
   overflow: hidden;
-  background: #E5E7EB;
+  background: #DDE2E7;
 }
 
 .homePage .avatar img {
@@ -847,7 +860,7 @@
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-border-dark);
   box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
   align-self: start;
 }
