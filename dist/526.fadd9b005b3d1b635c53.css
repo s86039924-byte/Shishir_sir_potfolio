@@ -508,6 +508,12 @@
   justify-content:center;
 }
 
+@media (max-width: 1023px){
+  .featuredImageCol{
+    order:-1;
+  }
+}
+
 /* ===== Responsive ===== */
 @media (min-width: 640px){
   .facHeroTitle{ font-size:48px; }

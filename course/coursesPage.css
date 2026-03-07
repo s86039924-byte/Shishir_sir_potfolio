@@ -417,6 +417,19 @@
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 639px){
+  .coursePage .heroActions{
+    width:100%;
+    max-width:260px;
+    align-items:stretch;
+  }
+
+  .coursePage .heroActions .btnHero{
+    width:100%;
+    justify-content:center;
+  }
+}
+
 @media (min-width: 640px){
   .coursePage .heroActions{ flex-direction:row; justify-content:flex-start; }
   .coursePage .heroTitle{ font-size:48px; }

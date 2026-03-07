@@ -93,12 +93,34 @@ const fullResultImages = [
   "/testimonila_image/full_image_2.jpeg",
 ];
 
+const chunkRows = (results: typeof hallResults) => {
+  const rows: typeof hallResults[] = [];
+  for (let i = 0; i < results.length; i += 3) {
+    rows.push(results.slice(i, i + 3));
+  }
+  return rows;
+};
+
 const SuccessStoriesPage: React.FC = () => {
   const [showAllHall, setShowAllHall] = useState(false);
-  const visibleHallResults = useMemo(
-    () => (showAllHall ? hallResults : hallResults.slice(0, 6)),
-    [showAllHall]
+  const mainResults = useMemo(
+    () => hallResults.filter((result) => result.label.toLowerCase() === "percentile"),
+    []
   );
+  const advancedResults = useMemo(
+    () => hallResults.filter((result) => result.label.toLowerCase() === "air"),
+    []
+  );
+  const visibleMainResults = useMemo(
+    () => (showAllHall ? mainResults : mainResults.slice(0, 6)),
+    [mainResults, showAllHall]
+  );
+  const visibleAdvancedResults = useMemo(
+    () => (showAllHall ? advancedResults : advancedResults.slice(0, 6)),
+    [advancedResults, showAllHall]
+  );
+  const mainRows = useMemo(() => chunkRows(visibleMainResults), [visibleMainResults]);
+  const advancedRows = useMemo(() => chunkRows(visibleAdvancedResults), [visibleAdvancedResults]);
   const scrollToHallOfFame = () => {
     const el = document.getElementById("ssHallOfFame");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -183,28 +205,80 @@ const SuccessStoriesPage: React.FC = () => {
               <p className="ssSectionSub">Our top performers who set new benchmarks.</p>
             </div>
 
-            <div className="ssHallGrid ssResultGrid">
-              {visibleHallResults.map((result) => (
-                <article className="ssHallCard ssResultCard" key={result.name}>
-                  <div className="ssResultImageWrap">
-                    <img
-                      className="ssResultImage"
-                      src={result.img}
-                      alt={`${result.name} result`}
-                    />
+            <div className="ssResultBlock">
+              <div className="ssResultBlockHead">
+                <h3 className="ssResultBlockTitle">JEE Main Results</h3>
+                <p className="ssResultBlockSub">Percentile achievers</p>
+              </div>
+              <div className="ssHallGrid">
+                {mainRows.map((row, rowIndex) => (
+                  <div
+                    className={`ssResultRow ${rowIndex % 2 === 0 ? "ssRowLtr" : "ssRowRtl"}`}
+                    key={`main-row-${rowIndex}`}
+                  >
+                    {row.map((result, index) => (
+                      <article
+                        className="ssHallCard ssResultCard"
+                        key={`${result.name}-${result.label}-${result.value}-${rowIndex}-${index}`}
+                      >
+                        <div className="ssResultAvatarWrap">
+                          <img
+                            className="ssResultImage"
+                            src={result.img}
+                            alt={`${result.name} result`}
+                          />
+                        </div>
+
+                        <div className="ssResultStripe">
+                          <span className="ssResultMetricValue">{result.value}</span>
+                          <span className="ssResultMetricSuffix">%ile</span>
+                        </div>
+
+                        <p className="ssResultNamePlate">{result.name}</p>
+                      </article>
+                    ))}
                   </div>
-                  <div className="ssResultBody">
-                    <h3 className="ssResultName">{result.name}</h3>
-                    <p className="ssResultMetric">
-                      {result.label === "Percentile"
-                        ? `${result.value}%tile`
-                        : `AIR ${result.value}`}
-                    </p>
-                  </div>
-                </article>
-              ))}
+                ))}
+              </div>
             </div>
-            {hallResults.length > 6 && (
+
+            <div className="ssResultBlock">
+              <div className="ssResultBlockHead">
+                <h3 className="ssResultBlockTitle">JEE Advanced Results</h3>
+                <p className="ssResultBlockSub">AIR rank holders</p>
+              </div>
+              <div className="ssHallGrid">
+                {advancedRows.map((row, rowIndex) => (
+                  <div
+                    className={`ssResultRow ${rowIndex % 2 === 0 ? "ssRowRtl" : "ssRowLtr"}`}
+                    key={`advanced-row-${rowIndex}`}
+                  >
+                    {row.map((result, index) => (
+                      <article
+                        className="ssHallCard ssResultCard"
+                        key={`${result.name}-${result.label}-${result.value}-${rowIndex}-${index}`}
+                      >
+                        <div className="ssResultAvatarWrap">
+                          <img
+                            className="ssResultImage"
+                            src={result.img}
+                            alt={`${result.name} result`}
+                          />
+                        </div>
+
+                        <div className="ssResultStripe">
+                          <span className="ssResultMetricValue">AIR {result.value}</span>
+                        </div>
+
+                        <p className="ssResultNamePlate">{result.name}</p>
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {(mainResults.length > 6 || advancedResults.length > 6) && (
               <div className="ssHallToggleWrap">
                 <button
                   type="button"

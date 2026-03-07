@@ -18,7 +18,7 @@ const Havbar: React.FC<HavbarProps> = ({ navItems, activePage }) => {
           <span className="shellBrandLogoFrame">
             <img className="shellBrandLogo" src="/logo/IIT_study_forum.jpg" alt="IIT Study Forum logo" />
           </span>
-          <span className="shellBrandText">IIT Study Forum</span>
+          
         </a>
 
         <button

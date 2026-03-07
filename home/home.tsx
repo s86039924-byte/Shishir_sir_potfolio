@@ -43,19 +43,6 @@ const IitsfHome: React.FC = () => {
                 </a>
               </div>
 
-              <div className="heroStats">
-                <div className="stat">
-                  <p className="statValue">12k+</p>
-                  <p className="statLabel">Students Mentored</p>
-                </div>
-
-                <div className="statDivider" />
-
-                <div className="stat">
-                  <p className="statValue">450+</p>
-                  <p className="statLabel">IIT Selections</p>
-                </div>
-              </div>
             </div>
 
             <div className="heroRightVisual" aria-hidden="true">

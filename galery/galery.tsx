@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "./galery.css";
+import "../tetimonila/testimonila.css";
 
 type GalleryItem = {
   id: string;
@@ -9,6 +10,13 @@ type GalleryItem = {
   size: "large" | "medium" | "small";
   image: string;
   video?: string;
+};
+
+type TestimonialResult = {
+  name: string;
+  label: "Percentile" | "AIR";
+  value: string;
+  img: string;
 };
 
 const galleryItems: GalleryItem[] = [
@@ -99,6 +107,23 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
+const testimonialResults: TestimonialResult[] = [
+  { name: "Srishti Aggarwal", label: "Percentile", value: "99.13", img: "/testimonila_image/Shristi.png" },
+  { name: "Aditya Kadanga", label: "Percentile", value: "96.74", img: "/testimonila_image/Aditya.png" },
+  { name: "Dhruv Maheshwari", label: "Percentile", value: "96.79", img: "/testimonila_image/Dhruv.png" },
+  { name: "Anmol yadav", label: "Percentile", value: "99.65", img: "/testimonila_image/Anmol_yadav.png" },
+  { name: "Mukul Saini", label: "Percentile", value: "99.6", img: "/testimonila_image/Mukul_saini.png" },
+  { name: "Ansh Goyal", label: "Percentile", value: "99.23", img: "/testimonila_image/Ansh_goyal.png" },
+  { name: "Nitin", label: "AIR", value: "1198", img: "/testimonila_image/Nitin.png" },
+  { name: "Prakhar Aggarwal", label: "Percentile", value: "99.85", img: "/testimonila_image/Prakhar_Agrwall.png" },
+  { name: "Ajay Sharma", label: "AIR", value: "982", img: "/testimonila_image/Ajay_Shanrma.png" },
+  { name: "Anuj Arora", label: "AIR", value: "501", img: "/testimonila_image/Anuj Arora.png" },
+  { name: "Ankit Aggarwal", label: "AIR", value: "22", img: "/testimonila_image/Ankit Aggarwal.png" },
+  { name: "Arjun Chauhan", label: "AIR", value: "591", img: "/testimonila_image/Arjun Chauhan.png" },
+  { name: "Chirag Jain", label: "AIR", value: "529", img: "/testimonila_image/chirag_jain.png" },
+  { name: "Prakhar Aggarwal", label: "AIR", value: "959", img: "/testimonila_image/Prakhar_Agrwall.png" },
+];
+
 const toYouTubeEmbedUrl = (url: string): string | null => {
   try {
     const parsed = new URL(url);
@@ -136,12 +161,35 @@ const getCardClassName = (item: GalleryItem): string => {
   return `galCard galCardSquare${item.video ? " galCardVideoSmall" : ""}`;
 };
 
+const chunkRows = <T,>(items: T[]) => {
+  const rows: T[][] = [];
+  for (let i = 0; i < items.length; i += 3) {
+    rows.push(items.slice(i, i + 3));
+  }
+  return rows;
+};
+
 const GalleryPage: React.FC = () => {
   const [tab, setTab] = useState<"photos" | "videos">("photos");
+  const [category, setCategory] = useState<"All" | "Lectures" | "Events" | "Results">("All");
   const visibleItems = useMemo(
-    () => galleryItems.filter((item) => (tab === "photos" ? !item.video : Boolean(item.video))),
-    [tab]
+    () =>
+      galleryItems.filter((item) => {
+        const tabMatch = tab === "photos" ? !item.video : Boolean(item.video);
+        const categoryMatch = category === "All" ? true : item.category === category;
+        return tabMatch && categoryMatch;
+      }),
+    [tab, category]
   );
+  const mainRows = useMemo(
+    () => chunkRows(testimonialResults.filter((result) => result.label === "Percentile")),
+    []
+  );
+  const advancedRows = useMemo(
+    () => chunkRows(testimonialResults.filter((result) => result.label === "AIR")),
+    []
+  );
+  const showTestimonialsResults = tab === "photos" && category === "Results";
 
   return (
     <div className="galPage">
@@ -179,82 +227,165 @@ const GalleryPage: React.FC = () => {
 
         {/* Category pills */}
         <div className="galPills">
-          <button className="galPill galPillActive" type="button">
+          <button
+            className={`galPill${category === "All" ? " galPillActive" : ""}`}
+            type="button"
+            onClick={() => setCategory("All")}
+          >
             All
           </button>
-          <button className="galPill" type="button">
+          <button
+            className={`galPill${category === "Lectures" ? " galPillActive" : ""}`}
+            type="button"
+            onClick={() => setCategory("Lectures")}
+          >
             Lectures
           </button>
-          <button className="galPill" type="button">
+          <button
+            className={`galPill${category === "Events" ? " galPillActive" : ""}`}
+            type="button"
+            onClick={() => setCategory("Events")}
+          >
             Events
           </button>
-          <button className="galPill" type="button">
+          <button
+            className={`galPill${category === "Results" ? " galPillActive" : ""}`}
+            type="button"
+            onClick={() => setCategory("Results")}
+          >
             Results
           </button>
         </div>
 
-        {/* Grid */}
-        <section className="galGrid">
-          {visibleItems.map((item) => {
-            const imageSrc = item.image;
-            const className = getCardClassName(item);
-            if (item.video) {
-              const embedUrl = toYouTubeEmbedUrl(item.video);
-              return (
-                <article className={className} key={item.id}>
-                  {embedUrl ? (
-                    <iframe
-                      className="galVideoFrame"
-                      src={embedUrl}
-                      title={item.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <a className="galVideoLinkFallback" href={item.video} target="_blank" rel="noreferrer">
-                      <img className="galImg" alt={item.title} src={imageSrc} />
-                    </a>
-                  )}
-                </article>
-              );
-            }
-
-            if (item.size === "large") {
-              return (
-                <article className={className} key={item.id}>
-                  <img className="galImg" alt={item.title} src={imageSrc} />
-                  <div className="galBigOverlay" />
-                  <div className="galBigContent">
-                    <span className="galTag galTagRed">{item.category}</span>
-                    <h3 className="galBigTitle">{item.title}</h3>
-                    <p className="galBigText">{item.description}</p>
+        {showTestimonialsResults ? (
+          <section className="galResultsMatch">
+            <div className="ssResultBlock">
+              <div className="ssResultBlockHead">
+                <h3 className="ssResultBlockTitle">JEE Main Results</h3>
+                <p className="ssResultBlockSub">Percentile achievers</p>
+              </div>
+              <div className="ssHallGrid">
+                {mainRows.map((row, rowIndex) => (
+                  <div
+                    className={`ssResultRow ${rowIndex % 2 === 0 ? "ssRowLtr" : "ssRowRtl"}`}
+                    key={`gallery-main-row-${rowIndex}`}
+                  >
+                    {row.map((result, index) => (
+                      <article
+                        className="ssHallCard ssResultCard"
+                        key={`gallery-main-${result.name}-${result.value}-${rowIndex}-${index}`}
+                      >
+                        <div className="ssResultAvatarWrap">
+                          <img className="ssResultImage" src={result.img} alt={`${result.name} result`} />
+                        </div>
+                        <div className="ssResultStripe">
+                          <span className="ssResultMetricValue">{result.value}</span>
+                          <span className="ssResultMetricSuffix">%ile</span>
+                        </div>
+                        <p className="ssResultNamePlate">{result.name}</p>
+                      </article>
+                    ))}
                   </div>
-                </article>
-              );
-            }
+                ))}
+              </div>
+            </div>
 
-            return (
-              <article className={className} key={item.id}>
-                <img className="galImg" alt={item.title} src={imageSrc} />
-                <div className="galHoverOverlay" />
-                <div className="galHoverText">
-                  <p className="galHoverTitle">{item.title}</p>
-                  <p className="galHoverSub">{item.category}</p>
-                </div>
-              </article>
-            );
-          })}
-        </section>
+            <div className="ssResultBlock">
+              <div className="ssResultBlockHead">
+                <h3 className="ssResultBlockTitle">JEE Advanced Results</h3>
+                <p className="ssResultBlockSub">AIR rank holders</p>
+              </div>
+              <div className="ssHallGrid">
+                {advancedRows.map((row, rowIndex) => (
+                  <div
+                    className={`ssResultRow ${rowIndex % 2 === 0 ? "ssRowRtl" : "ssRowLtr"}`}
+                    key={`gallery-advanced-row-${rowIndex}`}
+                  >
+                    {row.map((result, index) => (
+                      <article
+                        className="ssHallCard ssResultCard"
+                        key={`gallery-adv-${result.name}-${result.value}-${rowIndex}-${index}`}
+                      >
+                        <div className="ssResultAvatarWrap">
+                          <img className="ssResultImage" src={result.img} alt={`${result.name} result`} />
+                        </div>
+                        <div className="ssResultStripe">
+                          <span className="ssResultMetricValue">AIR {result.value}</span>
+                        </div>
+                        <p className="ssResultNamePlate">{result.name}</p>
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : (
+          <>
+            {/* Grid */}
+            <section className="galGrid">
+              {visibleItems.map((item) => {
+                const imageSrc = item.image;
+                const className = getCardClassName(item);
+                if (item.video) {
+                  const embedUrl = toYouTubeEmbedUrl(item.video);
+                  return (
+                    <article className={className} key={item.id}>
+                      {embedUrl ? (
+                        <iframe
+                          className="galVideoFrame"
+                          src={embedUrl}
+                          title={item.title}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <a className="galVideoLinkFallback" href={item.video} target="_blank" rel="noreferrer">
+                          <img className="galImg" alt={item.title} src={imageSrc} />
+                        </a>
+                      )}
+                    </article>
+                  );
+                }
 
-        {/* Load More */}
-        <div className="galLoadMoreWrap">
-          <button className="galLoadMoreBtn" type="button">
-            <span>Load More</span>
-            <span className="material-symbols-outlined galLoadMoreIcon">expand_more</span>
-          </button>
-        </div>
+                if (item.size === "large") {
+                  return (
+                    <article className={className} key={item.id}>
+                      <img className="galImg" alt={item.title} src={imageSrc} />
+                      <div className="galBigOverlay" />
+                      <div className="galBigContent">
+                        <span className="galTag galTagRed">{item.category}</span>
+                        <h3 className="galBigTitle">{item.title}</h3>
+                        <p className="galBigText">{item.description}</p>
+                      </div>
+                    </article>
+                  );
+                }
+
+                return (
+                  <article className={className} key={item.id}>
+                    <img className="galImg" alt={item.title} src={imageSrc} />
+                    <div className="galHoverOverlay" />
+                    <div className="galHoverText">
+                      <p className="galHoverTitle">{item.title}</p>
+                      <p className="galHoverSub">{item.category}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </section>
+
+            {/* Load More */}
+            <div className="galLoadMoreWrap">
+              <button className="galLoadMoreBtn" type="button">
+                <span>Load More</span>
+                <span className="material-symbols-outlined galLoadMoreIcon">expand_more</span>
+              </button>
+            </div>
+          </>
+        )}
       </main>
 
     </div>
