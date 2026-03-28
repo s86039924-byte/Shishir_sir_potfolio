@@ -68,8 +68,29 @@ function sendFile(res, filePath) {
 
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url || "/", "http://localhost");
-  const safePath = path.normalize(decodeURIComponent(requestUrl.pathname)).replace(/^(\.\.[/\\])+/, "");
+  let decodedPathname;
+  try {
+    decodedPathname = decodeURIComponent(requestUrl.pathname);
+  } catch {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Bad Request");
+    return;
+  }
+
+  const normalizedPath = path.normalize(decodedPathname).replace(/^[/\\]+/, "");
+  const safePath = normalizedPath.replace(/^(\.\.[/\\])+/, "");
   const requestedPath = path.join(DIST_DIR, safePath);
+  const resolvedRequestedPath = path.resolve(requestedPath);
+  const resolvedDistDir = path.resolve(DIST_DIR);
+
+  if (
+    resolvedRequestedPath !== resolvedDistDir &&
+    !resolvedRequestedPath.startsWith(`${resolvedDistDir}${path.sep}`)
+  ) {
+    res.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Forbidden");
+    return;
+  }
 
   fs.stat(requestedPath, (statErr, stats) => {
     if (!statErr && stats.isFile()) {

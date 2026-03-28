@@ -70,7 +70,6 @@ const IitsfHome: React.FC = () => {
                       alt="Result card of Ankit Aggarwal"
                       src="/testimonila_image/Ankit Aggarwal AIR 22.jpeg"
                     />
-                    <div className="rankYear">2026-27</div>
                   </div>
 
                   <div className="rankInfo">
@@ -86,7 +85,6 @@ const IitsfHome: React.FC = () => {
                       alt="Result card of Arjun Chauhan"
                       src="/testimonila_image/Arjun Chauhan AIR 591.jpeg"
                     />
-                    <div className="rankYear">2026-27</div>
                   </div>
 
                   <div className="rankInfo">
